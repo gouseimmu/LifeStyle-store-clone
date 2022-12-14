@@ -261,11 +261,7 @@ function Footer() {
               <GridItem>
                 <Grid templateColumns="repeat(4, 1fr)" gap={3}>
                   <GridItem>
-                    <Grid
-                      
-                      templateColumns="20px 1fr"
-                      alignItems={"center"}
-                    >
+                    <Grid templateColumns="20px 1fr" alignItems={"center"}>
                       <GridItem>
                         <FaPhoneAlt fontSize={"40px"} />
                       </GridItem>
@@ -276,7 +272,7 @@ function Footer() {
                     </Grid>
                   </GridItem>
                   <GridItem>
-                    <Grid templateColumns="50px 1fr" >
+                    <Grid templateColumns="50px 1fr">
                       <GridItem>
                         <FaRegQuestionCircle fontSize={"40px"} />
                       </GridItem>
@@ -287,7 +283,7 @@ function Footer() {
                     </Grid>
                   </GridItem>
                   <GridItem>
-                    <Grid templateColumns="50px 1fr" >
+                    <Grid templateColumns="50px 1fr">
                       <GridItem>
                         <MdMail fontSize={"40px"} />
                       </GridItem>
@@ -300,7 +296,7 @@ function Footer() {
                 </Grid>
               </GridItem>
             </Grid>
-            <Flex mt={2} gap={'25px'}>
+            <Flex mt={2} gap={"25px"}>
               <FaFacebookF fontSize={"25px"} />
               <FaTwitter fontSize={"25px"} />
               <FaInstagram fontSize={"25px"} />
@@ -315,16 +311,17 @@ function Footer() {
           borderWidth={"0.5px"}
         />
         <Box>
-            <Flex px={"135px"}>
-                <Image
-                w='95px'
-                h="60px"
-                
-                src="https://vrchennai.com/UploadFile/Storeimage/Lifestyle-big.png"
+          <Flex px={"135px"}>
+            <Image
+              w="95px"
+              h="60px"
+              src="https://vrchennai.com/UploadFile/Storeimage/Lifestyle-big.png"
             ></Image>
-            <Text color={"a0939f"} fontSize={13} mt={"19px"} ml={30}>&copy; 2022 RNA Intellectual Property Limited. Terms & Conditions
-              - Privacy Policy</Text>
-            </Flex>
+            <Text color={"a0939f"} fontSize={13} mt={"19px"} ml={30}>
+              &copy; 2022 RNA Intellectual Property Limited. Terms & Conditions
+              - Privacy Policy
+            </Text>
+          </Flex>
         </Box>
       </Box>
     </div>
