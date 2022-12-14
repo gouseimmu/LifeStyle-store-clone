@@ -1,0 +1,23 @@
+.bigbox_img_main{
+    width: 90%;
+    margin: auto;
+    margin-top: 7rem;
+
+}
+.bigbox_img_main>h1{
+    font-size: 36px;
+    font-family: ProximaNova-Regular,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    margin-bottom: 25px;
+    color: #000000;
+}
+.bigbox_img_cont{
+    display: flex;
+    justify-content: space-between;
+
+}
+.bigbox_img_cont>div{
+    width: 32.5%;
+}
+.bigbox_img_cont>div>img{
+    width: 100%;
+}
