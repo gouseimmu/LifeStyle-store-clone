@@ -39,14 +39,6 @@ const Women = () => {
       <Bigbox heading={`Curated For You`} data={wmn_edtrC}/>
       <Bigbox heading={`Editor's Curated List`} data={wmn_edtr}/>
       <Bigbox heading={`Shop By Department`} data={wmn_spd}/>
-
-
-
-
-
-
-
-
     </div>
   )
 }
