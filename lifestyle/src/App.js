@@ -1,30 +1,10 @@
- 
- 
-import './App.css';
- 
- 
- 
- 
- 
- 
-import './App.css';
-
-import MainRoutes from "./pages/MainRoutes";
-
-// import MainRoutes from './pages/MainRoutes';
-import Navbar from './components/Navbar';
-import SingleProduct from './pages/SingleProductPage';
+import "./App.css";
 
 
 function App() {
-  return (
-    <div className="App">
-      <SingleProduct/>
-      
-      
-       
-    </div>
-  );
+  return <div className="App">
+    
+  </div>;
 }
 
 export default App;

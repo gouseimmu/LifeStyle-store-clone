@@ -123,20 +123,19 @@ function Navbar() {
         </Button>
       </Flex>
       <Flex px={"10%"}>
-        <Flex >
+        <Flex>
           <Image
             w={60}
-            
             src="https://vrchennai.com/UploadFile/Storeimage/Lifestyle-big.png"
           ></Image>
         </Flex>
-        <Flex  w={"100%"} gap={"30px"} pl="30px"  >
+        <Flex w={"100%"} gap={"30px"} pl="30px">
           <Menu isOpen={isOpenWomen}>
             <MenuButton
               transition="all 0.2s"
               fontWeight={"500"}
               fontSize={"14px"}
-              _hover={{ color: '#FAA619' }}
+              _hover={{ color: "#FAA619" }}
               aria-label="Courses"
               onMouseEnter={onOpenWomen}
               onMouseLeave={onCloseWomen}
@@ -157,7 +156,7 @@ function Navbar() {
               fontWeight={"500"}
               fontSize={"14px"}
               aria-label="Courses"
-              _hover={{ color: '#FAA619' }}
+              _hover={{ color: "#FAA619" }}
               onMouseEnter={onOpenMen}
               onMouseLeave={onCloseMen}
             >
@@ -176,7 +175,7 @@ function Navbar() {
               transition="all 0.2s"
               fontWeight={"500"}
               fontSize={"14px"}
-              _hover={{ color: '#FAA619' }}
+              _hover={{ color: "#FAA619" }}
               aria-label="Courses"
               onMouseEnter={onOpenKid}
               onMouseLeave={onCloseKid}
@@ -194,7 +193,7 @@ function Navbar() {
               transition="all 0.2s"
               fontWeight={"500"}
               fontSize={"14px"}
-              _hover={{ color: '#FAA619' }}
+              _hover={{ color: "#FAA619" }}
               aria-label="Courses"
               onMouseEnter={onOpenShoesBag}
               onMouseLeave={onCloseShoesBag}
@@ -218,7 +217,7 @@ function Navbar() {
               transition="all 0.2s"
               fontWeight={"500"}
               fontSize={"14px"}
-              _hover={{ color: '#FAA619' }}
+              _hover={{ color: "#FAA619" }}
               aria-label="Courses"
               onMouseEnter={onOpenBeauty}
               onMouseLeave={onCloseBeauty}
@@ -235,7 +234,7 @@ function Navbar() {
           </Menu>
         </Flex>
         <Flex mt="10px">
-        <InputGroup>
+          <InputGroup>
             <InputLeftElement
               pointerEvents="none"
               children={<FaSearch color="gray.300" />}
@@ -247,15 +246,14 @@ function Navbar() {
             />
           </InputGroup>
         </Flex>
-          
-        
+
         <Flex w="80%" alignItems={"center"} justifyContent={"space-around"}>
           <Menu isOpen={isOpenMore}>
             <MenuButton
               transition="all 0.2s"
               fontWeight={"500"}
               fontSize={"14px"}
-              _hover={{ color: '#FAA619' }}
+              _hover={{ color: "#FAA619" }}
               aria-label="Courses"
               onMouseEnter={onOpenMore}
               onMouseLeave={onCloseMore}
@@ -274,10 +272,12 @@ function Navbar() {
             </MenuList>
           </Menu>
           <Button variant="ghost">Sign Up / Sign In</Button>
-          <Flex _hover={{ cursor: 'Pointer' }}><FaRegHeart  /></Flex>
-          <Flex _hover={{ cursor: 'Pointer' }}><FaShoppingBag /></Flex>
-          
-          
+          <Flex _hover={{ cursor: "Pointer" }}>
+            <FaRegHeart />
+          </Flex>
+          <Flex _hover={{ cursor: "Pointer" }}>
+            <FaShoppingBag />
+          </Flex>
         </Flex>
       </Flex>
     </Box>
