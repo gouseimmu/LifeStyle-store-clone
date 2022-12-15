@@ -1,43 +1,81 @@
-import * as types from "./actionTypes"
-import axios from "axios"
 
- const getProductsRequest = ()=>(dispatch)=>{
-    dispatch({type:types.GET_PRODUCTS_REQUEST})
-    return axios.get(`https://twisty-careful-composer.glitch.me/products`).then((r)=>{
-        dispatch({type:types.GET_PRODUCTS_SUCCESS,payload:r.data})
-    }).catch((e)=>{
-        dispatch({type:types.GET_PRODUCTS_ERROR})
-    })
- }
+// import axios from "axios"
+// import * as types from "./actionTypes"
 
- const addProducts = (payload)=>(dispatch)=>{
-    dispatch({type:types.ADD_NEW_PRODUCT_REQUEST})
-    return axios.post(`https://twisty-careful-composer.glitch.me/products`,payload).then((r)=>{
-        dispatch({type:types.ADD_NEW_PRODUCT_SUCCESS,payload:r.data})
-    }).catch((e)=>{
-        dispatch({type:types.ADD_NEW_PRODUCT_ERROR,payload:e})
-    })
- }
+// export const addProduct = (queryParams) => (dispatch) => {
+//     dispatch({ type: types.POST_REQUEST_PRODUCT })
+//     return axios.post( `https://twisty-careful-composer.glitch.me/products`,queryParams).then((res) => {
+//         // console.log(res);
+//         return dispatch({type:types.POST_SUCCESS_PRODUCT,paylod:res.data})
+//     }).catch((err) => {
+//         return dispatch({type:types.POST_SUCCESS_PRODUCT})
+//     })
+// }
 
- const editProducts = (id,payload)=>(dispatch)=>{
-    console.log(payload)
-    dispatch({type:types.EDIT_PRODUCTS_REQUEST})
-    return axios.patch(`https://twisty-careful-composer.glitch.me/products/${id}`,payload).then((res)=>{
-        dispatch({type:types.EDIT_PRODUCT_SUCCESS,payload:res.data})
-    }).catch((e)=>{
-        dispatch({type:types.EDIT_PRODUCT_ERROR,payload:e})
-    })
- }
+// export const getProduct = () => (dispatch) => {
+//     dispatch({type:types.GET_REQUEST_PRODUCT})
+//     return axios.get(`https://twisty-careful-composer.glitch.me/products`)
+//     .then((res)=>{
+//         return dispatch({type:types.GET_SUCCESS_PRODUCT,payload:res.data})
+//     }).catch((err)=>{
+//         return dispatch({type:types.GET_FAIL_PRODUCT})
+//     })
+// } 
 
- const deleteProducts = (id)=>(dispatch)=>{
+// export const deleteProduct= (id) => (dispatch)=>{
+//     dispatch({type:types.DELETE_REQUEST_PRODUCT})
+//     return axios.delete(`https://twisty-careful-composer.glitch.me/products/${id}`)
+//     .then((res)=>{
+//         dispatch({type:types.DELETE_SUCCESS_PRODUCT,payload:res.data})
+//         // console.log(res.data);
+//     })
+//     .catch((err)=>{
+//         dispatch({type:types.DELETE_FAIL_PRODUCT})
+//         // console.log(err);
+//     })
+// }
 
-    dispatch({type:types.DEL_PRODUCT_REQUEST})
-    return axios.delete(`https://twisty-careful-composer.glitch.me/products/${Number(id)}`).then((r)=>{
-        dispatch({type:types.DEL_PRODUCT_SUCCESS,payload:r})
-    }).catch((e)=>{
-        dispatch({type:types.DEL_PRODUCT_ERROR,payload:e})
-    })
+// export const updateProduct = (data) => (dispatch) =>{
+//     dispatch({type:types.UPDATE_REQUEST_PRODUCT})
+//     return axios.patch(`https://twisty-careful-composer.glitch.me/products/${data.id}`,data)
+//     .then((res)=>{
+//         console.log(res.data);
+//     })
+//     .catch((err)=>{
+//         console.log(err);
+//     })
+// }
 
- }
+// const getProductRequest = ()=>{
+//     return{
+//         type:types.GET_PRODUCTS_REQUEST
+//     }
+// }
 
-export {getProductsRequest,addProducts,editProducts,deleteProducts}
+//  export  const getProductList = (queryParams) => (dispatch)=>{
+  
+//     // console.log(queryParams);
+//     dispatch(getProductRequest)
+
+//     return axios.get(`https://twisty-careful-composer.glitch.me/products`,queryParams).then((res)=>{
+//         dispatch({
+//             type:types.GET_PRODUCTS_SUCCESS,
+//             payload:res.data
+//         })
+//     }).catch((err)=>{
+//         dispatch({type:types.GET_PRODUCTS_FAILURE})
+//     })
+
+// }
+
+
+ 
+
+// export const getAllProduct=(dispatch)=>{
+//    return axios.get("https://twisty-careful-composer.glitch.me/products")
+//    .then((res)=>dispatch({type:types.GET_SUCCESS_ALLPRODUCT,payload:res.data}))
+//    .catch((err)=>console.log(err))
+
+// }
+
+ 
