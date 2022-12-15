@@ -30,8 +30,8 @@ root.render(
     
   
  
-    <App />
-  </ChakraProvider>
+    
+ 
  
 );
 
