@@ -40,22 +40,27 @@ const UserProducts = () => {
          <Link to={`/menpro/${menpro.id}`}> <div key={menpro.id} className="product-list">
 
             <div>
+              <div>
               <img src={menpro.image} alt={menpro.title} style={{ height: "300px", width: "100%" }} />
-            </div>
-            <div>
+              </div>
+              <div>
               <h2> ${menpro.price}</h2>
-            </div>
-            <div> <h3>{menpro.title}</h3></div>
-            <div>
-              {menpro.category}
+              </div>
+              <div>
+              <h3>{menpro.title}</h3>
+              </div>
+              <div>
+              <h3>{menpro.category}</h3>
+              </div>
+              <button className='button-product'>ADD TO BASKET</button>
             </div>
             
-            <div>
-            <button className='button-product'>BUY NOW</button>
-            </div>
+
           </div></Link>
         )
+
       })}
+
     </>
   )
 }

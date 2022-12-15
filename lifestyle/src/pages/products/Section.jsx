@@ -146,7 +146,7 @@ const Section = () => {
           </select>
         </div>
   
-        <div className={styles.sort}>
+        {/* <div className={styles.sort}>
           <p>Sort By</p>
           <select name="" id="">
             <option value="">Relevance</option>
@@ -154,7 +154,7 @@ const Section = () => {
             <option value="">Price - High To Low</option>
             <option value="">Alphabetical</option>
           </select>
-        </div>
+        </div> */}
       </div>
     );
 }

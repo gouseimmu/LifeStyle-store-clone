@@ -13,15 +13,15 @@ const AllProducts = () => {
         </WrapperCustomer> */}
      
     <Wrapper color="green">
-      <WrapperFilterSort>
+      {/* <WrapperFilterSort>
         <FilterSort/>
-       
+      </WrapperFilterSort> */}
+<FilterSort/>
+<UserProducts/>
 
-      </WrapperFilterSort>
 
-        <WrapperUserProduct>
-          <UserProducts/>
-        </WrapperUserProduct>
+        {/* <WrapperUserProduct>
+        </WrapperUserProduct> */}
         
     </Wrapper>
     </div>
@@ -41,9 +41,7 @@ const AllProducts = () => {
 // `
 
 const Wrapper = styled.div`
-  //  border:1px solid blue;
-  // border:${({color})=>`3px solid ${color};`}
-  //  display:flex;
+ 
    min-height:100vh;
    padding:50px;
    background-color: floralwhite;
@@ -51,25 +49,21 @@ const Wrapper = styled.div`
   
 `;
 const WrapperFilterSort = styled.div`
- width:300px;
+ width:100px;
   position:fixed;
   padding:50px;
   border:2px solid teal;
-   background:linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1))
-
- 
 `;
-const WrapperUserProduct = styled.div`
-width:80%;
-padding:20px;
-margin-left:300px;
-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;  
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,max-content));
-justify-content:center;
-grid-gap:30px;
-background: repeating-linear-gradient(red, yellow 10%, green 20%)
-`
+// const WrapperUserProduct = styled.div`
+// width:100%;
+// padding:20px;
+// margin:auto;
+// box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;  
+// display:grid;
+// grid-template-columns:repeat(4,1fr);
+// justify-content:center;
+// grid-gap:30px;
+// `
 
 
 

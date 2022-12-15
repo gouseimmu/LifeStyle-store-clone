@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components"
-import FilterSort from './FilterSort';
+import FilterMenSort from './FilterSort';
 import UserMenProducts from './UserMenProducts';
 
 
@@ -14,8 +14,7 @@ const AllMenProducts = () => {
      
     <Wrapper color="green">
       <WrapperFilterSort>
-        <FilterSort/>
-       
+        <FilterMenSort/>
 
       </WrapperFilterSort>
 

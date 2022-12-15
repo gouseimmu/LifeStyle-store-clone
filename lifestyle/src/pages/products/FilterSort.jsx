@@ -59,34 +59,21 @@ const FilterSort = () => {
     }, [categoryType, setSearchParams, sortBy,genderType])
 
     return (
+        <div>
         <div className='filter'>
-            <h2>Filters</h2>
+
             <div className='filter-1'>
                   <h4>Categories</h4>
 
+
                 <div className='filter-2'>
-                    <input type="checkbox" value="Beachwear" defaultChecked={categoryType.includes("Beachwear")} onChange={handleFilter} />
-                    <label>Beachwear</label>
+                    <input type="checkbox" value="Kurtas and Kurtis" defaultChecked={categoryType.includes("Kurtas and Kurtis")} onChange={handleFilter} />
+                    <label>Kurtas and Kurtis</label>
                 </div>
 
                 <div className='filter-2'>
-                    <input type="checkbox" value="Coats" defaultChecked={categoryType.includes("Coats")} onChange={handleFilter} />
-                    <label>Coats</label>
-                </div>
-
-                <div className='filter-2'>
-                    <input type="checkbox" value="Suits" defaultChecked={categoryType.includes("Suits")} onChange={handleFilter} />
-                    <label>Suits</label>
-                </div>
-
-                <div className='filter-2'>
-                    <input type="checkbox" value="Shorts" defaultChecked={categoryType.includes("Shorts")} onChange={handleFilter} />
-                    <label>Shorts</label>
-                </div>
-
-                <div className='filter-2'>
-                    <input type="checkbox" value="Shirts" defaultChecked={categoryType.includes("Shirts")} onChange={handleFilter} />
-                    <label>Shirts</label>
+                    <input type="checkbox" value="Dresses and Jumpsuits" defaultChecked={categoryType.includes("Dresses and Jumpsuits")} onChange={handleFilter} />
+                    <label>Dresses and Jumpsuits</label>
                 </div>
             </div>
 
@@ -104,18 +91,8 @@ const FilterSort = () => {
                 </div>
                 </div>
             </div>
-            <div className='filter-1'>
-            <h4>Gender</h4>
-      <div className='filter-2'>
-            <input type="checkbox" value="Women" defaultChecked={genderType.includes("Women")} onChange={handleGenderFilter}/>
-            <label>Women</label>
+            
         </div>
-
-        <div className='filter-2'>
-            <input type="checkbox" value="Men" defaultChecked={genderType.includes("Men")} onChange={handleGenderFilter}/>
-            <label>Men</label>
-        </div>
-            </div>
         </div>
     )
 }

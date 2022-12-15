@@ -10,11 +10,9 @@ import Section from './pages/products/Section';
 function App() {
   return (
     <div className="App">
-      {/* <Women/> */}
-      {/* <Men/> */}
-      {/* <AllMenProducts/> */}
-      {/* <AllProducts/> */}
       <Section/>
+      {/* <AllMenProducts/> */}
+      <AllProducts/>
     </div>
   );
 }
