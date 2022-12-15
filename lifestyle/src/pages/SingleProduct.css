@@ -1,5 +1,26 @@
+.title{
+    width:60%;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    font-family: sans-serif;
+}
 .container{
     width:80%;
     margin: auto;
     display: flex;
+}
+.slicker{
+    width:90%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    gap:20px
+}
+.slicker img{
+    width: 95%;
+}
+.h1{
+    font-size:50px;
+    margin-top: 50px;
+    font-family: sans-serif;
 }

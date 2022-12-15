@@ -21,8 +21,7 @@ function App() {
     <div className="App">
       <SingleProduct/>
       
-      
-       
+   
     </div>
   );
 }
