@@ -47,10 +47,10 @@ function Footer() {
           borderWidth={"0.5px"}
         />
         <Box mt={"50px"} mb={"50px"}>
-          <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-            <GridItem>
+          <Grid templateColumns="repeat(2, 1fr)" gap={4} >
+            <GridItem  >
               <Heading fontSize={25}>Subscribe to our awesome emails.</Heading>
-              <Text color={"lightGrey"}>
+              <Text ml={'-30px'}  color={"lightGrey"}>
                 Get our latest offers and news straight in your inbox.
               </Text>
               <Flex ml={"170px"} mt={8}>
@@ -72,15 +72,16 @@ function Footer() {
               </Flex>
             </GridItem>
             <GridItem px={12}>
-              <Heading fontSize={25}>Download our apps</Heading>
+              <Heading ml={'-60px'} fontSize={25}>Download our apps</Heading>
               <Text color={"lightGrey"}>
                 Shop our products and offers on-the-go.
               </Text>
               <Grid
-                ml={"200px"}
+                ml={"180px"}
                 mt={8}
                 templateColumns="repeat(5, 1fr)"
                 alignItems="center"
+                
               >
                 <GridItem>
                   <Image h={38} w={110} src={app}></Image>
@@ -261,11 +262,11 @@ function Footer() {
               <GridItem>
                 <Grid templateColumns="repeat(4, 1fr)" gap={3}>
                   <GridItem>
-                    <Grid templateColumns="20px 1fr" alignItems={"center"}>
+                    <Grid templateColumns="50px 1fr" alignItems={"center"}>
                       <GridItem>
                         <FaPhoneAlt fontSize={"40px"} />
                       </GridItem>
-                      <GridItem>
+                      <GridItem textAlign={"left"}>
                         <Text>Talk to us</Text>
                         <Text>1800-123-1555</Text>
                       </GridItem>
@@ -276,7 +277,7 @@ function Footer() {
                       <GridItem>
                         <FaRegQuestionCircle fontSize={"40px"} />
                       </GridItem>
-                      <GridItem>
+                      <GridItem textAlign={"left"}>
                         <Text>Helpcenter</Text>
                         <Text>help.lifestylestores.com</Text>
                       </GridItem>
@@ -286,8 +287,8 @@ function Footer() {
                     <Grid templateColumns="50px 1fr">
                       <GridItem>
                         <MdMail fontSize={"40px"} />
-                      </GridItem>
-                      <GridItem>
+                      </GridItem >
+                      <GridItem textAlign={"left"}>
                         <Text>Write to us</Text>
                         <Text>help@lifestylestores.com</Text>
                       </GridItem>
