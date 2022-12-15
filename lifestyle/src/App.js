@@ -10,8 +10,8 @@ import Women from './pages/products/Women';
 function App() {
   return (
     <div className="App">
-      {/* <Women/> */}
-      <Menpage/>
+      <Women/>
+      {/* <Menpage/> */}
     </div>
   );
 }
