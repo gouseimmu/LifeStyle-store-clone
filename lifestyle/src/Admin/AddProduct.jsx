@@ -33,7 +33,7 @@ const AddProduct = () => {
 
  const handleSubmit = (e)=>{
     e.preventDefault()
-    axios.post(`https://twisty-careful-composer.glitch.me/products`,data).then(navigate("/"))
+    axios.post(`https://political-wise-diver.glitch.me/products`,data).then(navigate("/admin"))
  }
 
   return (
@@ -44,7 +44,7 @@ const AddProduct = () => {
             <Link to="/admin/addproduct">Add Product</Link>
           </Heading>
           <Heading>
-            <Link to="/admin/manage">Manage Product</Link>
+            <Link to="/admin">Manage Product</Link>
           </Heading>
         </Flex>
       </Container>
