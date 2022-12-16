@@ -66,7 +66,7 @@ function Navbar() {
       <Flex
         px="10%"
         color={"white"}
-        bg="blackAlpha.800"
+        bg="black"
         fontFamily={"sans-serif"}
       >
         <Button
@@ -122,7 +122,7 @@ function Navbar() {
           Help
         </Button>
       </Flex>
-      <Flex px={"10%"}>
+      <Flex bgColor={'white'} px={"10%"}>
         <Flex>
           <Image
             w={60}

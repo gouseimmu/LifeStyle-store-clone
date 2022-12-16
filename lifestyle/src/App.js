@@ -1,4 +1,5 @@
 import "./App.css";
+ 
 
 import MainRoutes from "./pages/MainRoutes";
 
@@ -10,6 +11,8 @@ function App() {
       <MainRoutes />
     </div>
   );
-}
+  }
+ export default App
 
-export default App;
+
+ 
