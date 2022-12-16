@@ -1,5 +1,4 @@
- 
- import {Routes,Route} from "react-router-dom"
+  import {Routes,Route} from "react-router-dom"
  import AddProduct from "../Admin/AddProduct";
  import Admin from "../Admin/Admin";
 import Edit from "../Admin/Edit";
