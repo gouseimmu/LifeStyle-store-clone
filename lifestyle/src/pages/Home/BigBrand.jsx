@@ -1,10 +1,20 @@
-import { Divider, Flex, Grid, GridItem, Heading, Image } from '@chakra-ui/react'
-import React from 'react'
+import {
+  Box,
+  Divider,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Image,
+  SimpleGrid,
+} from "@chakra-ui/react";
+import React from "react";
+import "./HomeComponent.css";
 
 function BigBrand() {
   return (
     <div>
-        <Heading
+      <Heading
         fontFamily={
           'ProximaNova-Regular,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"'
         }
@@ -23,46 +33,95 @@ function BigBrand() {
         mb={"20px"}
         borderWidth={"2px"}
       />
-      <Grid templateColumns='repeat(6, 1fr)' gap={6}>
+
+      <Box className={"bigBrand"}>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner1-14Dec2022.jpg'} />
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner1-14Dec2022.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner2-14Dec2022.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner2-14Dec2022.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner3-14Dec2022.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner3-14Dec2022.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner4-14Dec2022.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner4-14Dec2022.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner5-14Dec2022.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner5-14Dec2022.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner6-14Dec2022.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner6-14Dec2022.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner7-14Dec2022.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner7-14Dec2022.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner8-14Dec2022.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner8-14Dec2022.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner9-14Dec2022.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner9-14Dec2022.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner10-14Dec2022.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner10-14Dec2022.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner11-14Dec2022.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner11-14Dec2022.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner12-14Dec2022.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-Top-Brands-Desk-Banner12-14Dec2022.jpg"
+            }
+          />
         </GridItem>
-      </Grid>
+      </Box>
     </div>
-  )
+  );
 }
 
-export default BigBrand
+export default BigBrand;
