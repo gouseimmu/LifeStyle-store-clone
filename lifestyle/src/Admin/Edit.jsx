@@ -11,7 +11,7 @@ function Edit() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`https://twisty-careful-composer.glitch.me/products/${id}`).then((res) => {
+    axios.get(`https://political-wise-diver.glitch.me/products/${id}`).then((res) => {
       settitle(res.data.title);
       setprice(res.data.price);
       setImage(res.data.image);
@@ -30,7 +30,7 @@ function Edit() {
 
   function Update(e) {
     e.preventDefault();
-    axios.put(`https://twisty-careful-composer.glitch.me/products/${id}`, data).then(navigate("/"));
+    axios.put(`https://political-wise-diver.glitch.me/products/${id}`, data).then(navigate("/"));
   }
   return (
     <div className="w-screen h-full flex flex-col justify-center items-center mt-16">

@@ -1,7 +1,7 @@
 .flexbox_cont{
     width: 90%;
     margin: auto;
-    margin-top: 7rem;
+    margin-top: 5rem;
 }
 .flexbox_cont>h1{
     font-size: 30px;
@@ -35,3 +35,29 @@
     border-radius: 20px;
 
 }
+
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+    .flexbox_cont>h1{
+    font-size: 25px;
+    font-family: ProximaNova-Regular,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    margin-bottom: 25px;
+    color: #000000;
+    text-align: left;
+    margin-left: 18px;
+}
+
+  }
+  /* ==========================================Small Screen============================================================= */
+  @media only screen and (min-width: 320px) and (max-width: 499px) {
+    
+    .flexbox_cont>h1{
+        font-size: 20px;
+        font-family: ProximaNova-Regular,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+        margin-bottom: 25px;
+        color: #000000;
+        text-align: left;
+        margin-left: 18px;
+        font-weight: 600;
+    }
+
+  }
