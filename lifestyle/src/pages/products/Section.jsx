@@ -12,7 +12,7 @@ const Section = () => {
    
     return (
       <div className={styles.productBox}>
-        <div className={styles.head}> Men</div>
+        <div className={styles.head}>All Products</div>
         <div className={styles.filterbox}>
           <div>
             <img

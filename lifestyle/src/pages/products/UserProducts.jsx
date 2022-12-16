@@ -3,7 +3,9 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { getProductList } from '../../Redux/action';
-import "./UserProducts.css"
+import "./UserProducts.css";
+
+
 const UserProducts = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams()
@@ -37,26 +39,27 @@ const UserProducts = () => {
     <>
       {productList.length > 0 && productList.map(menpro => {
         return (
-         <Link to={`/menpro/${menpro.id}`}> <div key={menpro.id} className="product-list">
 
-            <div>
+
+         <Link to={`/menpro/${menpro.id}`}>
+          <div key={menpro.id} className="product-list">
               <div>
               <img src={menpro.image} alt={menpro.title} style={{ height: "300px", width: "100%" }} />
               </div>
               <div>
-              <h2> ${menpro.price}</h2>
+              <h2 className='pr'> ${menpro.price}</h2>
               </div>
               <div>
               <h3>{menpro.title}</h3>
               </div>
               <div>
-              <h3>{menpro.category}</h3>
+              {menpro.category}
               </div>
-              <button className='button-product'>ADD TO BASKET</button>
-            </div>
-            
+              <button className='button-product'>ADD TO BASKET</button>            
 
+              
           </div></Link>
+
         )
 
       })}

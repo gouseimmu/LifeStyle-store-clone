@@ -1,8 +1,10 @@
 
-// import {Routes,Route} from "react-router-dom"
+// import {Routes,Route} from "react-router-dom";
+
 // const MainRoutes = () => {
 //     return (
 //       <Routes>
+        
 //         <Route path="/" element={<Homepage />}></Route>
 //         <Route path="/product" element={<Product />}></Route>
 //         <Route path="/detail" element={<Detail />}></Route>

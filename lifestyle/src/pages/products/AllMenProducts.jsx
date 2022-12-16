@@ -1,48 +1,27 @@
 import React from 'react';
 import styled from "styled-components"
-import FilterMenSort from './FilterSort';
+import FilterMenSort from './FilterMenSort';
 import UserMenProducts from './UserMenProducts';
-
 
 
 const AllMenProducts = () => {
   return (
       <div>
-         {/* <WrapperCustomer id='customer'>
-            <h1>CLOTHING FOR CUSTOMER</h1>
-        </WrapperCustomer> */}
-     
-    <Wrapper color="green">
-      <WrapperFilterSort>
         <FilterMenSort/>
 
-      </WrapperFilterSort>
 
         <WrapperUserProduct>
           <UserMenProducts/>
         </WrapperUserProduct>
         
-    </Wrapper>
     </div>
   )
 }
 
-// const WrapperCustomer = styled.h1`
-// // font-size:40px;
-// width:100%,
-// padding :30px;
-// text-align:center;
-// margin-top:100px;
-// border:3px solid black;
-// background-color:teal;
-// color:white;
 
-// `
 
 const Wrapper = styled.div`
-  //  border:1px solid blue;
-  // border:${({color})=>`3px solid ${color};`}
-  //  display:flex;
+ 
    min-height:100vh;
    padding:50px;
    background-color: floralwhite;
@@ -50,25 +29,64 @@ const Wrapper = styled.div`
   
 `;
 const WrapperFilterSort = styled.div`
- width:300px;
+ width:100px;
   position:fixed;
   padding:50px;
   border:2px solid teal;
-   background:linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1))
-
- 
 `;
-const WrapperUserProduct = styled.div`
-width:80%;
-padding:20px;
-margin-left:300px;
-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;  
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,max-content));
-justify-content:center;
-grid-gap:30px;
-background: repeating-linear-gradient(red, yellow 10%, green 20%)
-`
+
+
+ const WrapperUserProduct = styled.div`
+
+ @media (min-width: 0px) {
+  width:90%;
+   padding:20px;
+   display:grid;
+   justify-content:center;
+   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+   grid-template-columns:repeat(1,1fr);
+   margin:auto;
+   gap:30px;
+ }
+  
+
+      @media (min-width: 500px) {
+       width:90%;
+        padding:20px;
+        display:grid;
+        justify-content:center;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        grid-template-columns:repeat(2,1fr);
+        margin:auto;
+        gap:30px;
+      }
+
+      @media (min-width: 768px) {
+        width:90%;
+        padding:20px;
+        display:grid;
+        justify-content:center;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:30px;
+        margin:auto;
+      }
+
+      @media (min-width: 1024px) {
+        width:90%;
+        padding:20px;
+        display:grid;
+        justify-content:center;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:30px;
+        margin:auto;
+      }
+    
+`;
+
 
 
 

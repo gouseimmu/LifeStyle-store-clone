@@ -8,22 +8,24 @@ import UserProducts from './UserProducts';
 const AllProducts = () => {
   return (
       <div>
+        <FilterSort/>
          {/* <WrapperCustomer id='customer'>
             <h1>CLOTHING FOR CUSTOMER</h1>
         </WrapperCustomer> */}
      
-    <Wrapper color="green">
+    {/* <Wrapper color="green"> */}
       {/* <WrapperFilterSort>
         <FilterSort/>
       </WrapperFilterSort> */}
-<FilterSort/>
-<UserProducts/>
+{/* <FilterSort/>
+<UserProducts/> */}
 
 
-        {/* <WrapperUserProduct>
-        </WrapperUserProduct> */}
+        <WrapperUserProduct>
+          <UserProducts/>
+        </WrapperUserProduct>
         
-    </Wrapper>
+    {/* </Wrapper> */}
     </div>
   )
 }
@@ -63,7 +65,59 @@ const WrapperFilterSort = styled.div`
 // grid-template-columns:repeat(4,1fr);
 // justify-content:center;
 // grid-gap:30px;
-// `
+// `;
+
+ const WrapperUserProduct = styled.div`
+
+ @media (min-width: 0px) {
+  width:90%;
+   padding:20px;
+   display:grid;
+   justify-content:center;
+   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+   grid-template-columns:repeat(1,1fr);
+   margin:auto;
+   gap:30px;
+ }
+  
+
+      @media (min-width: 500px) {
+       width:90%;
+        padding:20px;
+        display:grid;
+        justify-content:center;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        grid-template-columns:repeat(2,1fr);
+        margin:auto;
+        gap:30px;
+      }
+
+      @media (min-width: 768px) {
+        width:90%;
+        padding:20px;
+        display:grid;
+        justify-content:center;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:30px;
+        margin:auto;
+      }
+
+      @media (min-width: 1024px) {
+        width:90%;
+        padding:20px;
+        display:grid;
+        justify-content:center;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:30px;
+        margin:auto;
+      }
+    
+`;
+
 
 
 

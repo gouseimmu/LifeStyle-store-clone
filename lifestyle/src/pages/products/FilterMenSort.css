@@ -8,17 +8,39 @@ justify-content: center;
 /* .filter-1{
     display: flex;
 } */
+
+.filter{
+    display: grid;
+}
+.filter{
+    grid-template-columns: repeat(2,1fr);
+    gap:30px;
+}
+
+.filter{
+    /* border: 2px solid gray; */
+    width:350px;
+    display: grid;
+    margin: auto;
+    text-align: left;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top: 30px;
+
+}
+
 .filter  h2{
     font-size: 40px;
     margin-bottom: 20px;
-
 }
+
+
 .filter-1{
     margin-bottom: 20px;
-
+    grid-template-columns: repeat(2,1fr);
+    margin-left: 10px;
 }
 .filter-1 h4{
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 10px;
 
 }
