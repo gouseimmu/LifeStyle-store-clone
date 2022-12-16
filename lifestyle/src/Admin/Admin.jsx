@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
   
    import axios from "axios"
-  import { Link } from "react-router-dom";
+  import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
  
  
@@ -18,9 +18,9 @@ import { useEffect } from "react";
   
   const Admin = () => {
     const [Products,setProducts] = useState([])
-
+    const navigate = useNavigate()
     const getData = ()=>{
-        axios.get(`https://twisty-careful-composer.glitch.me/products`).then((r)=>{
+        axios.get(`https://political-wise-diver.glitch.me/products`).then((r)=>{
             setProducts(r.data)
         }).catch((e)=>{
             console.log(e)
@@ -32,7 +32,8 @@ import { useEffect } from "react";
     },[])
 
     const deleteUser = (id)=>{
-        axios.delete(`https://twisty-careful-composer.glitch.me/products/${id}`).then(getData())
+        axios.delete(`https://political-wise-diver.glitch.me/products/${id}`).then(getData()).then(navigate("/admin"))
+
     }
   
     return (

@@ -1,52 +1,15 @@
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-import './App.css';
+import "./App.css";
 
- 
-
- 
-// import MainRoutes from './pages/MainRoutes';
-import Navbar from './components/Navbar';
-import Checkout from './pages/checkout/Checkout';
-
- 
- 
- 
- 
- 
- 
-
- 
+import MainRoutes from "./pages/MainRoutes";
 
 function App() {
   return (
     <div className="App">
-      <SingleProduct/>
-      
- 
-      <MainRoutes/>
-      
-    
        
- 
-   
- 
- 
+
+      <MainRoutes />
     </div>
   );
-  return <div className="App">
-    
-  </div>;
 }
 
 export default App;
