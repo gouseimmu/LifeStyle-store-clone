@@ -1,16 +1,12 @@
-import './App.css';
-
-import MainRoutes from "./pages/MainRoutes";
-
-// import MainRoutes from './pages/MainRoutes';
-import Navbar from './components/Navbar';
+import "./App.css";
+import Home from "./pages/Home/Home";
 
 
 function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+  return <div className="App">
+
+    <Home/>
+  </div>;
 }
 
 export default App;
