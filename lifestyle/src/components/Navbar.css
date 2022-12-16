@@ -1,0 +1,46 @@
+.drawermanu {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  row-gap: 30px;
+}
+.Nav-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu {
+  display: none;
+  width: 30px;
+  font-size: xx-large;
+  cursor: pointer;
+  margin-top: 13px;
+}
+
+.logo {
+  display: none;
+}
+
+.topNav {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1100px) {
+  .Nav-right {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    display: -webkit-box;
+    margin-left: auto;
+  }
+  .topNav {
+    display: none;
+  }
+  .logo {
+    display: block;
+  }
+}

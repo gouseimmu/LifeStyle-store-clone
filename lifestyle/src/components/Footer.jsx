@@ -46,14 +46,19 @@ function Footer() {
           bg={"#A0AEC0"}
           borderWidth={"0.5px"}
         />
-        <Box mt={"50px"} mb={"50px"}>
-          <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+        <Box w={"80%"} m={"auto"} classname={"footer_top"} my={"50px"}>
+          <Box className={"footer_top"}>
             <GridItem>
-              <Heading fontSize={25}>Subscribe to our awesome emails.</Heading>
-              <Text color={"lightGrey"}>
-                Get our latest offers and news straight in your inbox.
-              </Text>
-              <Flex ml={"170px"} mt={8}>
+              <Box textAlign={"left"}>
+                <Heading fontSize={25}>
+                  Subscribe to our awesome emails.
+                </Heading>
+                <Text mt={"10px"} color={"lightGrey"}>
+                  Get our latest offers and news straight in your inbox.
+                </Text>
+              </Box>
+
+              <Flex mt={"30px"}>
                 <Input
                   w={80}
                   variant="filled"
@@ -71,16 +76,24 @@ function Footer() {
                 </Button>
               </Flex>
             </GridItem>
-            <GridItem px={12}>
-              <Heading fontSize={25}>Download our apps</Heading>
-              <Text color={"lightGrey"}>
-                Shop our products and offers on-the-go.
-              </Text>
-              <Grid
-                ml={"200px"}
+            <GridItem>
+              <Box textAlign={"left"}>
+                <Heading fontSize={25}>Download our apps</Heading>
+                <Text mt={"10px"} color={"lightGrey"}>
+                  Shop our products and offers on-the-go.
+                </Text>
+              </Box>
+
+              <Flex mt={"30px"}>
+                <Image h={38} w={110} src={app}></Image>
+                <Image h={38} w={110} src={play}></Image>
+              </Flex>
+              {/* <Grid
+                ml={"180px"}
                 mt={8}
                 templateColumns="repeat(5, 1fr)"
                 alignItems="center"
+                
               >
                 <GridItem>
                   <Image h={38} w={110} src={app}></Image>
@@ -88,9 +101,9 @@ function Footer() {
                 <GridItem>
                   <Image h={38} w={110} src={play}></Image>
                 </GridItem>
-              </Grid>
+              </Grid> */}
             </GridItem>
-          </Grid>
+          </Box>
         </Box>
         <Divider
           orientation="horizontal"
@@ -255,17 +268,17 @@ function Footer() {
           bg={"#A0AEC0"}
           borderWidth={"0.5px"}
         />
-        <Box border={"0px solid blue"} ml={"130px"} mt={15} mb={15}>
-          <Flex>
-            <Grid gridTemplateColumns={"5fr 1fr"}>
+        <Box className={"footer_bot"} w={"80%"} m={"auto"} my={15}>
+          <Flex justifyContent={"space-between"}>
+            <Grid gridTemplateColumns="repeat(1, 1fr)">
               <GridItem>
-                <Grid templateColumns="repeat(4, 1fr)" gap={3}>
+                <Grid templateColumns="repeat(3, 1fr)" gap={3}>
                   <GridItem>
-                    <Grid templateColumns="20px 1fr" alignItems={"center"}>
+                    <Grid templateColumns="50px 1fr" alignItems={"center"}>
                       <GridItem>
                         <FaPhoneAlt fontSize={"40px"} />
                       </GridItem>
-                      <GridItem>
+                      <GridItem textAlign={"left"}>
                         <Text>Talk to us</Text>
                         <Text>1800-123-1555</Text>
                       </GridItem>
@@ -276,7 +289,7 @@ function Footer() {
                       <GridItem>
                         <FaRegQuestionCircle fontSize={"40px"} />
                       </GridItem>
-                      <GridItem>
+                      <GridItem textAlign={"left"}>
                         <Text>Helpcenter</Text>
                         <Text>help.lifestylestores.com</Text>
                       </GridItem>
@@ -287,7 +300,7 @@ function Footer() {
                       <GridItem>
                         <MdMail fontSize={"40px"} />
                       </GridItem>
-                      <GridItem>
+                      <GridItem textAlign={"left"}>
                         <Text>Write to us</Text>
                         <Text>help@lifestylestores.com</Text>
                       </GridItem>
@@ -311,7 +324,7 @@ function Footer() {
           borderWidth={"0.5px"}
         />
         <Box>
-          <Flex px={"135px"}>
+          <Flex w={"80%"} m={"auto"}>
             <Image
               w="95px"
               h="60px"
