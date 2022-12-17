@@ -5,6 +5,7 @@ const initialState = {
     product: [],
     isLoading: false,
     isError: false,
+    singleProduct: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -48,7 +49,16 @@ const reducer = (state = initialState, action) => {
                     isLoading: false,
                     isError: true
                 }
-
+                case types.SELECT_PRODUCT:
+                    return {
+                        ...state,
+                        singleProduct: payload
+                    }
+                case types.REMOVE_PRODUCT:
+                    return {
+                        ...state,
+                        singleProduct: null
+                    }
  
   
         default:
