@@ -67,6 +67,7 @@
 // }
 
 // export default Signup
+import { Button, Heading, Input, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -79,6 +80,7 @@ const initState = {
     mobile: "",
 }
 const Signup = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const dispatch = useDispatch();
   const navigate = useNavigate()
     const [ data, setData   ] = useState(initState);
@@ -97,13 +99,19 @@ const handleSubmit = (e)=>{
 }
   return (
     <div className="box">
+      <Button onClick={onOpen}>Signup</Button>
+      <Modal onClose={onClose} isOpen={isOpen} isCentered>
+       <ModalOverlay />
+        <ModalContent>
       <div className="outerDiv">
+      <ModalHeader>Sinup</ModalHeader>
+      <ModalBody>
         <div className="innerDiv">
-          <form onSubmit={handleSubmit}>
-            <h3>Create Your Account</h3>
+          <form onSubmit={handleSubmit} style={{margin:'10px'}}>
+            <Heading>Create Your Account</Heading>
             <div className="formInputgroup">
-              <input
-                type="text"
+              <Input
+                type="text" style={{border:"1px solid orange",margin:"10px"}}
                 className="formInput"
                 placeholder="Nick Name"
                 onChange={handleChange}
@@ -112,8 +120,8 @@ const handleSubmit = (e)=>{
               />
             </div>
             <div className="formInputgroup">
-              <input
-                type="email"
+              <Input
+                type="email" style={{border:"1px solid orange",margin:"10px"}}
                 className="formInput"
                 placeholder="Email address"
                 onChange={handleChange}
@@ -122,18 +130,18 @@ const handleSubmit = (e)=>{
               />
             </div>
             <div className="formInputgroup">
-              <input
+              <Input
                 type="password"
-                className="formInput"
-                placeholder=" Password"
+                className="formInput" style={{border:"1px solid orange",margin:"10px"}} 
+                placeholder=" Password" 
                 onChange={handleChange}
                 name="password"
                 value={password}
               />
             </div>
             <div className="formInputgroup">
-              <input
-                type="number"
+              <Input
+                type="number" style={{border:"1px solid orange",margin:"10px"}} 
                 className="formInput"
                 placeholder="Enter mobile number"
                 onChange={handleChange}
@@ -141,12 +149,16 @@ const handleSubmit = (e)=>{
                 value={mobile}
               />
             </div>
-            <button type="submit" className="s">
+            <Button type="submit" bg={"blue.600"} color={"white"}>
               Create Account
-            </button>
+            </Button>
+            <Button margin={10}  bg={"red"} onClick={onClose}>Close</Button>
           </form>
         </div>
+        </ModalBody>
       </div>
+        </ModalContent>
+      </Modal>
     </div>
   );
 };
