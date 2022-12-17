@@ -1,22 +1,15 @@
 import React from 'react'
-
-const App = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default App
-import "./App.css";
-import Men from "./pages/products/Men"
-
-
+import MainRoutes from './pages/MainRoutes';
+import UserProducts from './pages/products/UserProducts';
+import SingleProduct from './pages/SingleProductPage';
+import AllProducts from "./pages/products/AllProducts"
 function App() {
   return (
     <div className="App">
-      <Men/>
+      <MainRoutes/>
+      {/* <SingleProduct/> */}
+      {/* <UserProducts/> */}
+      {/* <AllProducts/> */}
     </div>
   );
 }

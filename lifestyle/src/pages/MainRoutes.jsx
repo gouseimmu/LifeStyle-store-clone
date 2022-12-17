@@ -1,4 +1,8 @@
-
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import AllProducts from './products/AllProducts'
+import UserProducts from './products/UserProducts'
+import SingleProduct from './SingleProductPage'
 // import {Routes,Route} from "react-router-dom";
 
 // const MainRoutes = () => {
@@ -45,7 +49,21 @@
  
          {/* <Route path="/admin/manage/:id"  element={<Edit/>}></Route> */}
           
-           
+
+        
+        const MainRoutes = () => {
+          return (
+            <div>
+              <Routes>
+                <Route path="/menpro/:id" element={<SingleProduct/>}/>
+                <Route path="/AllProducts" element={<AllProducts/>}/>
+                
+              </Routes>
+            </div>
+          )
+        }
+        
+        export default MainRoutes
  
          
         
