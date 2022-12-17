@@ -1,5 +1,28 @@
+import React from 'react'
+import {Routes,Route} from "react-router-dom";
+import Home from './Home/Home';
+import AllMenProducts from './products/AllMenProducts';
+import AllProducts from './products/AllProducts';
+import Signin from './Signin';
+import Signup from './Signup';
+import SingleProduct from './SingleProductPage';
 
-// import {Routes,Route} from "react-router-dom";
+
+function MainRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home/>}></Route>
+      <Route path="/women" element={<AllProducts/>}></Route>
+      <Route path="/men" element={<AllMenProducts/>}></Route>
+      <Route path="`/menpro/${item.id}`" element={<SingleProduct/>}></Route>
+      <Route path="login" element={<Signin/>}></Route>
+      <Route path="signup" element={<Signup/>}></Route>
+    </Routes>
+  )
+}
+
+export default MainRoutes
+
 
 // const MainRoutes = () => {
 //     return (
