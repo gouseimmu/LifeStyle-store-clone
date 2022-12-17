@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 // import {Routes,Route} from "react-router-dom";
 
@@ -16,11 +15,7 @@
 //         <Route path="/admin" element={<PrivatRoute><Admin /></PrivatRoute>}>
 //           {" "}
 //         </Route> 
-=======
-  import {Routes,Route} from "react-router-dom"
- import AddProduct from "../Admin/AddProduct";
- import Admin from "../Admin/Admin";
-import Edit from "../Admin/Edit";
+
  
 // const MainRoutes = () => {
 //     return (
@@ -29,9 +24,9 @@ import Edit from "../Admin/Edit";
  
 
 // // import {Routes,Route} from "react-router-dom"
-const MainRoutes = () => {
-    return (
-      <Routes>
+// const MainRoutes = () => {
+    // return (
+      // <Routes>
         
  
         {/* <Route path="/product" element={<Product />}></Route>
@@ -40,26 +35,25 @@ const MainRoutes = () => {
         <Route path="/payment" element={<PrivatRoute><Payment /></PrivatRoute>}></Route>
         <Route path="/signup"  element={<Register/>}/> 
         <Route path="/login"  element={<Login/>}></Route> */} 
-         <Route path="/admin" element={<Admin /> }></Route>
+         {/* <Route path="/admin" element={<Admin /> }></Route> */}
          {/* <Route path="/manage" element={<PrivatRoute><ManageProduct /></PrivatRoute>}></Route>
         <Route path="/edit" element={<PrivatRoute><EditProduct /></PrivatRoute>}></Route> */}
-          <Route path="/admin/addproduct" element={ <AddProduct /> }></Route>
+          {/* <Route path="/admin/addproduct" element={ <AddProduct /> }></Route> */}
 
           
           
  
-         <Route path="/admin/manage/:id"  element={<Edit/>}></Route>
+         {/* <Route path="/admin/manage/:id"  element={<Edit/>}></Route> */}
           
            
  
          
->>>>>>> 390077cff6551b9742ea2192423ddb43b5f3e0ac
         
      
     
-       
+{/*        
         </Routes>
       );
     };
   
-    export default MainRoutes;
+    export default MainRoutes; */}
