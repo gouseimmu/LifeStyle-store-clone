@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { getMenProductList } from '../../Redux/AppReducer/action';
 import "./UserProducts.css"
+
+
+
 const UserMenProducts = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams()

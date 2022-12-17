@@ -1,15 +1,19 @@
 import { Button } from '@chakra-ui/react';
 import React, { useEffect } from 'react'
+import { useToast } from '@chakra-ui/react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { getProductList } from '../../Redux/AppReducer/action';
 import "./UserProducts.css";
 
 
+
+
 const UserProducts = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams()
   const location = useLocation()
+
 
 
   const productList = useSelector((store) => store.AppReducer.product)
@@ -19,12 +23,12 @@ const UserProducts = () => {
     if (location || productList.length === 0) {
       const productCategory = searchParams.getAll("category")
 
-      const productGender = searchParams.getAll("gender")
+      // const productGender = searchParams.getAll("gender")
 
 
       const queryParams = {
         params: {
-          gender:productGender,
+          // gender:productGender,
           category: productCategory,
           _sort: searchParams.get('sortBy') && "price",
           _order: searchParams.get('sortBy')
@@ -55,7 +59,8 @@ const UserProducts = () => {
               <div>
               {menpro.category}
               </div>
-              <button className='button-product'>ADD TO BASKET</button>            
+              <button className='button-product'
+              >ADD TO BASKET</button>            
 
               
           </div></Link>

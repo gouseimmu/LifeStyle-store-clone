@@ -2,11 +2,17 @@ import React from 'react';
 import styled from "styled-components"
 import FilterMenSort from './FilterMenSort';
 import UserMenProducts from './UserMenProducts';
-
+import Navbar from '../../components/Navbar';
+import Carausel from '../../components/Carausel';
+import Section from './Section';
+import Footer from '../../components/Footer';
 
 const AllMenProducts = () => {
   return (
       <div>
+        <Navbar/>
+        <Carausel/>
+        <Section/>
         <FilterMenSort/>
 
 
@@ -14,6 +20,7 @@ const AllMenProducts = () => {
           <UserMenProducts/>
         </WrapperUserProduct>
         
+        <Footer/>
     </div>
   )
 }
