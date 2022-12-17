@@ -1,7 +1,5 @@
 import React from 'react'
 import styles from './Flexbox.module.css'
-import { Link } from 'react-router-dom'
-import MainRoutes from '../MainRoutes'
 
 const Flexbox= ({heading,data,data2}) => {
   return (
@@ -10,9 +8,7 @@ const Flexbox= ({heading,data,data2}) => {
       <hr></hr>
       <div className={styles.img_box_cont}>
         {data?.map((el)=> <div>
-          <Link to="/menProducts">
           <img src={el.src} alt="img" />
-          </Link>
           {el.text&&<h2 className={styles.h2}>{el.text}</h2>}
         </div>)}
       </div>

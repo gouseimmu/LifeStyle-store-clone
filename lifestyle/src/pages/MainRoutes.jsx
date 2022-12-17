@@ -23,12 +23,10 @@
 //         {/* <Route path="/" element={<Homepage />}></Route>
  
 
- import {Routes,Route} from "react-router-dom";
- import AllMenProducts from "./products/AllMenProducts";
 
-const MainRoutes = () => {
-    return (
-      <Routes>
+// const MainRoutes = () => {
+//     return (
+//       <Routes>
         
  
          {/* <Route path="/product" element={<Product />}></Route>
@@ -46,16 +44,15 @@ const MainRoutes = () => {
           
  
          <Route path="/admin/manage/:id"  element={<Edit/>}></Route> */}
-          <Route path="/menProducts" element={<AllMenProducts />}></Route>
            
  
          
         
      
-    
+{/*     
        
         </Routes>
       );
     };
   
-    export default MainRoutes;
+    export default MainRoutes; */}
