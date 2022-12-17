@@ -2,7 +2,7 @@ import { Button } from '@chakra-ui/react';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
-import { getProductList } from '../../Redux/action';
+import { getProductList } from '../../Redux/AppReducer/action';
 import "./UserProducts.css";
 
 
@@ -12,7 +12,7 @@ const UserProducts = () => {
   const location = useLocation()
 
 
-  const productList = useSelector((store) => store.product)
+  const productList = useSelector((store) => store.AppReducer.product)
   // console.log(productList)
 
   useEffect(() => {
