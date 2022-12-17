@@ -1,12 +1,26 @@
 import { Grid, GridItem, HStack, Img, Input, PinInput, PinInputField, VStack ,Heading, Button} from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './SingleProduct.css';
 import Slider from "react-slick";
-import { FaUnderline,FaShareAltSquare,FaVine,FaZhihu } from 'react-icons/fa';
+import { FaUnderline,FaShareAltSquare,FaVine,FaZhihu,FaEdit } from 'react-icons/fa';
+import axios from 'axios';
 // import {useSelector} from 'react-redux'
+
 
 const SingleProduct = () => {
   // const detailArr = useSelector((store)=>store.details)
+  const [data,setData]=useState([])
+   
+  const getData=()=>{
+      return axios.get(`https://koti-api.onrender.com/womenproducts`).then((res)=>setData(res.data))
+  }
+  console.log(data)
+
+ useEffect(()=>{
+  getData()
+  
+ },[])
+
 
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -30,10 +44,14 @@ const SingleProduct = () => {
     );
   }
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 3000,
+    autoplaySpeed: 1000,
+    cssEase: "linear",
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
   };
@@ -84,95 +102,36 @@ const SingleProduct = () => {
         <GridItem className='slicker'>
           <h1 className='h1'>You may also like</h1>
          <Slider {...settings}>
-         <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-                
+         {data.map((el)=>{
+                return(
+                    <div key={el.id}>
+                        <Img src={el.image1}/>
+                        <h1>${el.cost}</h1>
+                        <p>{el.description}</p>
+                        <Button bg={'orange'}>ADD TO BASKET</Button>
+                    </div>
+                )
+            })}
+               
          </Slider>
         </GridItem>
         <GridItem className='slicker'>
           <h1 className='h1'>Customer Also Viewed</h1>
-         <Slider {...settings}>
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-             <div>
-                <img  src='https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80' alt='siva'/>
-                <h1>Price</h1>
-                <p>Code Women Solid Knee-Length Shrug</p>
-             </div>  
-                
+          <Slider {...settings}>
+         {data.map((el)=>{
+                return(
+                    <div key={el.id}>
+                        <Img src={el.image1}/>
+                        <h1>${el.cost}</h1>
+                        <p>{el.description}</p>
+                        <Button bg={'orange'}>ADD TO BASKET</Button>
+                    </div>
+                )
+            })}
+               
          </Slider>
         </GridItem>
+       
     </div>    
   )
 }
