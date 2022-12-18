@@ -1,11 +1,17 @@
 import { Button, Checkbox, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Radio, RadioGroup, Select, Stack, useDisclosure } from "@chakra-ui/react"
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const ModalForm = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-  
+  const navigate = useNavigate()
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
+    const handleClick = ()=>{
+      alert("Order Placed Successfully")
+      onClose()
+      navigate("/")
+    }
   
     return (
       <>
@@ -56,9 +62,9 @@ export const ModalForm = () => {
                 <FormControl mt={4}>
                     <FormLabel>State</FormLabel>
                     <Select placeholder='Select your State'>
-                        <option value='option1'>Option 1</option>
-                        <option value='option2'>Option 2</option>
-                        <option value='option3'>Option 3</option>
+                        <option value='option1'>Andhra Pradesh</option>
+                        <option value='option2'>Mumbai</option>
+                        <option value='option3'>Karnataka</option>
                     </Select>
                 </FormControl>
 
@@ -87,10 +93,10 @@ export const ModalForm = () => {
                     <RadioGroup defaultValue='0'>
                         <Stack spacing={5} direction='row'>
                             <Radio colorScheme='orange' value='1'>
-                            Radio
+                           Home
                             </Radio>
                             <Radio colorScheme='orange' value='2'>
-                            Radio
+                           Office
                             </Radio>
                         </Stack>
                     </RadioGroup>
@@ -106,7 +112,7 @@ export const ModalForm = () => {
             </ModalBody>
   
             <ModalFooter>
-              <Button colorScheme='orange' mr={3} width={'100%'}>
+              <Button onClick={handleClick} colorScheme='orange' mr={3} width={'100%'}>
                 Ship to this Address
               </Button>
               {/* <Button onClick={onClose}>Cancel</Button> */}

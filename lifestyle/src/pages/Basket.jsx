@@ -15,7 +15,7 @@ const Basket = () => {
     <div>
         <div style={{display:"flex",gap:'20px',justifyContent:"center",margin:"20px"}}>
             <Link to="/kids" ><Button bg={'blue'} >Go Back</Button></Link>
-            <Button onClick={"chekout"}  bg={"red"} color={"white"}>Checkout</Button>
+           <Link to="/checkout"> <Button    bg={"red"} color={"white"}>Checkout</Button></Link>
         </div>
     <div style={{display:'grid',gridTemplateRows:"repeat(1,1fr)",gridTemplateColumns:"repeat(4,1fr)", gap:'20px'}}>
          {

@@ -57,14 +57,14 @@ const SingleProduct = () => {
     if (id) {
       console.log(detailArr)
       const  pro = detailArr.find((item)=>
-           item.Number(id) === Number(id)
+           item.Number(id) == Number(id)
       )
       
      pro && setCurrentProduct(pro)
        console.log(pro);
     }
   }, [id]);
-import { useSelector } from "react-redux";
+
 // import {useSelector} from 'react-redux'
 
 const SingleProduct = () => {
@@ -263,5 +263,6 @@ const SingleProduct = () => {
     </div>
   );
 };
+}
 
 export default SingleProduct;
