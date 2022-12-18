@@ -1,7 +1,11 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Basket from './Basket'
+import Kids from './Kids'
 import AllProducts from './products/AllProducts'
 import UserProducts from './products/UserProducts'
+import ShoesBags from './ShoesBags'
+import Single from './Single'
 import SingleProduct from './SingleProductPage'
 // import {Routes,Route} from "react-router-dom";
 
@@ -57,7 +61,10 @@ import SingleProduct from './SingleProductPage'
               <Routes>
                 <Route path="/menpro/:id" element={<SingleProduct/>}/>
                 <Route path="/AllProducts" element={<AllProducts/>}/>
-                
+                <Route path='/kids' element={<Kids/>}/>
+                <Route path='/shoesbags' element={<ShoesBags/>}/>
+                <Route path="/basket" element={<Basket/>}/>
+                 <Route path="/single" element={<Single/>}/>
               </Routes>
             </div>
           )
