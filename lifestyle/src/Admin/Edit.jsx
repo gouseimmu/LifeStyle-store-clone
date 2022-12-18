@@ -5,83 +5,80 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { getMenProductList, updateProducts } from "../Redux/AppReducer/action";
-import "./admin.css"
+import "./admin.css";
 
+const data = {
+  title: "",
+  price: 0,
+  image: "",
+  category: "",
+};
 
-// const data = {
-//   title: "",
-//   price: 0,
-//   image: "",
-//   category: "",
-// };
 function Edit() {
   const [task, setTask] = useState({});
-   
-   
+
   const navigate = useNavigate();
   const { id } = useParams();
-  const dispatch = useDispatch()
-  const product = useSelector((store)=>store.AppReducer.product)
+  const dispatch = useDispatch();
+  const product = useSelector((store) => store.AppReducer.product);
 
   useEffect(() => {
-     if(product.length===0){
-      dispatch(getMenProductList())
-     }
-  }, [dispatch,product.length]);
-
-
-  useEffect(()=>{
-    if(id){
-      const pro = product.find((item)=>item.id===Number(id))
-      pro && setTask(pro)
+    if (product.length === 0) {
+      dispatch(getMenProductList());
     }
-  },[id,product])
+  }, [dispatch, product.length]);
+
+  useEffect(() => {
+    if (id) {
+      const pro = product.find((item) => item.id === Number(id));
+      pro && setTask(pro);
+    }
+  }, [id, product]);
 
   function Update(e) {
     e.preventDefault();
-    dispatch(updateProducts(id,task)).then(()=>{
-      navigate("/admin")
-    })
-      
+    dispatch(updateProducts(id, task)).then(() => {
+      navigate("/admin");
+    });
   }
- 
+
   return (
-    
-    
-    <div id="bedit" >
-      
-       
-      <form id="edit" onSubmit={Update} >
-     <h1>Edit Product</h1>
+    <div id="bedit">
+      <form id="edit" onSubmit={Update}>
+        <h1>Edit Product</h1>
         <input
           value={task?.title}
-          onChange={(e)=>setTask({...task,title:e.target.value})}
+          onChange={(e) => setTask({ ...task, title: e.target.value })}
           type="text"
           placeholder="Enter Title"
-        /> <br/>
+        />{" "}
+        <br />
         <input
           value={task?.price}
-          onChange={(e) => setTask({...task,price:e.target.value})}
+          onChange={(e) => setTask({ ...task, price: e.target.value })}
           type="number"
           placeholder="Enter price"
-        /> <br/>
+        />{" "}
+        <br />
         <input
           value={task?.image}
-          onChange={(e) => setTask({...task,image:e.target.value})}
+          onChange={(e) => setTask({ ...task, image: e.target.value })}
           type="url"
           placeholder="Enter  url."
-        /> <br/>
-        <select
+        />{" "}
+        <br />
+        <select 
           name="category"
           value={task?.category}
-          onChange={(e) => setTask({...task,category:e.target.value})}
+          onChange={(e) => setTask({ ...task, category: e.target.value })}
         >
+          <option value={"Casual Shirts"}>Casual Shirts</option>
+          <option value={"Dresses"}>Dresses and JumpSuits</option>
           <option value={"Kurtas"}>Kurtas</option>
           <option value={"Womens"}>Womens</option>
-        </select><br/>
-        <button type="submit" >
-          UPDATE PRODUCT
-        </button>
+        </select>
+        <br />
+        <button type="submit">UPDATE PRODUCT</button>
       </form>
     </div>
   );

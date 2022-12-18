@@ -16,7 +16,7 @@ import {
  
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addProducts } from "../Redux/AppReducer/action";
+import { addProducts, getMenProductList } from "../Redux/AppReducer/action";
  
  
 const ini = {
@@ -29,12 +29,18 @@ const AddProduct = () => {
   
  const [data ,setData] = useState(ini)
 
-
+ const { title, price, image, category } = data;
  const navigate = useNavigate()
  const dispatch = useDispatch()
 
 
- const handleSubmit = ()=>{
+
+ const handleChange = (e) => {
+  const { name, value } = e.target;
+  setData({ ...data, [name]: value });
+};
+ const handleSubmit = (e)=>{
+  e.preventDefault()
    
     if(data){
       dispatch(addProducts(data)).then(navigate("/admin"))
@@ -79,8 +85,8 @@ const AddProduct = () => {
                   <Input
                     placeholder="Enter title"
                     name="title"
-                    value={data.title}
-                    onChange={(e)=>setData(e.target.value)}
+                    value={title}
+                    onChange={handleChange}
                   ></Input>
                 </FormControl>
               </GridItem>
@@ -90,8 +96,8 @@ const AddProduct = () => {
                   <Input
                     placeholder="Enter Price"
                     name="price"
-                    value={data.price}
-                    onChange={(e)=>setData(e.target.value)}
+                    value={price}
+                    onChange={handleChange}
                   ></Input>
                 </FormControl>
               </GridItem>
@@ -100,12 +106,12 @@ const AddProduct = () => {
                   <FormLabel> Image url:</FormLabel>
                   <Input
                     placeholder="Enter url"
-                    name="img"
+                    name="image"
                   
                     variant="outline"
                     colorScheme={"red"}
-                    value={data.image}
-                    onChange={(e)=>setData(e.target.value)}
+                    value={image}
+                    onChange={handleChange}
                   ></Input>
                 </FormControl>
               </GridItem>
@@ -115,9 +121,11 @@ const AddProduct = () => {
                   <FormLabel> Category:</FormLabel>
                   <Select
                     name="category"
-                    value={data.category}
-                    onChange={(e)=>setData(e.target.value)}
+                    value={category}
+                    onChange={handleChange}
                   >
+                     <option value={"Casual Shirts"}>Casual Shirts</option>
+                    <option value={"Dresses"}>Dresses and JumpSuits</option>
                     <option value={"Kurtas"}>Kurtas</option>
                     <option value={"womens"}>Womens</option>
                   </Select>

@@ -63,9 +63,11 @@ export const setRemoveProduct = ()=>{
 
 
 export const addProducts = (payload)=>(dispatch)=>{
+    console.log(payload)
     dispatch({type:types.ADD_MEN_PRODUCTS_REQUEST})
     return axios.post(`https://solar-juvenile-camel.glitch.me/menpro`,payload).then((r)=>{
         dispatch({type:types.ADD_MEN_PRODUCTS_SUCCESS,payload:r.data})
+        
     }).catch((e)=>{
         dispatch({type:types.ADD_MEN_PRODUCTS_FAILURE})
     })

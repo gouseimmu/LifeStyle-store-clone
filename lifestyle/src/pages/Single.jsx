@@ -1,4 +1,4 @@
-import { Button, Flex, GridItem, Heading, HStack, Img, Input, VStack } from '@chakra-ui/react';
+import { Box, Button, Flex, GridItem, Heading, HStack, Img, Input, VStack } from '@chakra-ui/react';
 import { FaShareAltSquare, FaVine, FaZhihu } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import './Kids.css';
@@ -6,6 +6,8 @@ import React, { useEffect, useState } from "react";
 import "./SingleProduct.css";
 import Slider from "react-slick";
 import axios from "axios";
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 
 const Single = () => {
@@ -153,6 +155,10 @@ const shoeData = () => {
 //   }
   return (
     <div>
+       <Box w={'full'} position={'fixed'} zIndex={'10'}>
+        <Navbar />
+        </Box>
+       
     <div style={{display:"flex",gap:"30px"}}>
 
          <div className='single'>
@@ -293,6 +299,7 @@ const shoeData = () => {
           })}
         </Slider>
       </GridItem>
+      <Footer/>
     </div>
   )
 }

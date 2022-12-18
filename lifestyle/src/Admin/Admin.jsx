@@ -47,9 +47,9 @@ const Admin = () => {
 const product = useSelector((store)=> store.AppReducer.product)
 const dispatch = useDispatch()
 useEffect(()=>{
-  if(product.length===0){
+   
     dispatch(getMenProductList())
-  }
+  
 },[product.length,dispatch])
 
   return (
@@ -64,7 +64,7 @@ useEffect(()=>{
         
         {
           product?.length && product.map((item)=>{
-            return <ProductItem key={item.id} {...item}/>
+            return <ProductItem key={item.id} {...item} data={item}/>
           })
         }
       </div>

@@ -66,7 +66,7 @@ const reducer = (state = initialState, action) => {
                     }
                     case types.ADD_MEN_PRODUCTS_SUCCESS:
                         return {
-                            ...state,isLoading:false,product:[...state.product,payload]
+                            ...state,isLoading:false,product:payload
                         }
                     case types.ADD_MEN_PRODUCTS_FAILURE:
                         return {

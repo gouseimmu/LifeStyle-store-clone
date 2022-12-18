@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { deleteProducts } from '../Redux/AppReducer/action'
 import "./admin.css"
+ 
 
 const ProductItem = ({id,title,image,category,price}) => {
     const navigate = useNavigate()
@@ -23,12 +24,12 @@ const ProductItem = ({id,title,image,category,price}) => {
         </p>
         <h3 id='cat'>{category}</h3>
         <div id="butt">
-        <button onClick={()=>navigate(`/admin/manage/${id}`)}>Edit</button>
-        <button onClick={handleDelete}>Delete</button>
+        <button id='hov' onClick={()=>navigate(`/admin/manage/${id}`)}>Edit</button>
+        <button id='hov' onClick={handleDelete}>Delete</button>
         </div>
         
           </div>
-        
+          
           </div>
   )
 }

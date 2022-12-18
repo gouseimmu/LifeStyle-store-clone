@@ -102,7 +102,7 @@ const Signin = () => {
   return (
     <div>
        <Navbar/>
-      <Button ml={"40em"} mt={"2em"} onClick={onOpen}>Do you want to Continue ? Please Login</Button>
+      <Button ml={"42em"} mt={"2em"} colorScheme={"green"} onClick={onOpen}>Please Login</Button>
       <Footer/>
      <Modal onClose={onClose} isOpen={isOpen} isCentered>
       <ModalOverlay />
@@ -132,7 +132,7 @@ const Signin = () => {
           <Button bg={'orange'} type="submit">SIGN IN</Button>
           <Button margin={10} color={"white"} bg={"blue.800"} onClick={onClose}>Close</Button>
           <br />
-          <Text>Already Registerd  <Link     to="/Signup">SignUp</Link></Text>
+          <h1 ml={"1em"}  >Already Registered  <Link   to="/Signup">SignUp</Link></h1>
         </form>
         </ModalBody>
          
