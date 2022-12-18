@@ -61,7 +61,7 @@ button[type=submit]:hover {
     width: 80%;
     height: auto;
     padding: 15px;
-    background-color: rgb(227, 222, 209);
+    background-color: rgb(250, 248, 230);
     border-radius: 12px;
    
      
@@ -80,6 +80,27 @@ button[type=submit]:hover {
 
   #title{
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
+    text-align: center;
     margin-top: 1em;
+     
+    color: teal;
+  }
+  #price{
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  #cat{
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  #man{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: -0.5em;
+    margin-bottom: 2em;
   }

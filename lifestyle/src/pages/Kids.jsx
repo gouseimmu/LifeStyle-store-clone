@@ -3,6 +3,8 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 import "./Kids.css";
 import {arr} from "./KidsSlicker";
 
@@ -63,6 +65,7 @@ const Kids = () => {
 
   return (
     <div >
+      <Navbar/>
         <div style={{width:"90%",margin:"auto",marginTop:"30px"}}>
         <Slider {...settings}>
         
@@ -98,7 +101,7 @@ const Kids = () => {
             <Button>{page}</Button>
             <Button onClick={()=>setPage(page+1)} bg={'blue'}color={"white"} disabled={page===4}>Next</Button>
         </div>
-        
+        <Footer/>
     </div>
   )
 }

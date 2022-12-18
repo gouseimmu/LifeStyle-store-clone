@@ -144,11 +144,11 @@ const handleLogout  = ()=>{
       <Flex bgColor={"rgb(247, 248, 247)"} px={"10%"}>
         <Box className={"Nav-right"}>
           <Flex>
-            <Image
+          <Link to="/">  <Image
               w={60}
               src="https://vrchennai.com/UploadFile/Storeimage/Lifestyle-big.png"
               alt="logo"
-            ></Image>
+            ></Image></Link>
           </Flex>
           <Flex w={"100%"} gap={"30px"} pl="30px">
             <Menu isOpen={isOpenWomen} >

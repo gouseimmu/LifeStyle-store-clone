@@ -15,69 +15,62 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
+import { useDispatch, useSelector } from "react-redux";
+ 
+import { getMenProductList } from "../Redux/AppReducer/action";
+import ProductItem from "./ProductItem";
+import "./admin.css"
 
 const Admin = () => {
-  const [Products, setProducts] = useState([]);
-   const navigate = useNavigate()
-  const getData = () => {
-    axios
-      .get(`https://solar-juvenile-camel.glitch.me/menpro`)
-      .then((r) => {
-        setProducts(r.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
+//   const [Products, setProducts] = useState([]);
+//    const navigate = useNavigate()
+//   const getData = () => {
+//     axios
+//       .get(`https://solar-juvenile-camel.glitch.me/menpro`)
+//       .then((r) => {
+//         setProducts(r.data);
+//       })
+//       .catch((e) => {
+//         console.log(e);
+//       });
+//   };
  
- useEffect(()=>{
-  getData()
- },[])
+//  useEffect(()=>{
+//   getData()
+//  },[])
 
-  const deleteUser = (id) => {
-    axios
-      .delete(`https://solar-juvenile-camel.glitch.me/menpro/${id}`)
-      .then(navigate("/admin")).then(window.location.reload())
-  };
+//   const deleteUser = (id) => {
+//     axios
+//       .delete(`https://solar-juvenile-camel.glitch.me/menpro/${id}`)
+//       .then(navigate("/admin")).then(window.location.reload())
+//   };
+const product = useSelector((store)=> store.AppReducer.product)
+const dispatch = useDispatch()
+useEffect(()=>{
+  if(product.length===0){
+    dispatch(getMenProductList())
+  }
+},[product.length,dispatch])
 
   return (
     <div>
       <Navbar/>
-      <Container maxW={"container"} padding="5">
-      <Heading textAlign={"center"}>Manage Products</Heading>
-        <Flex gap="10" alignContent={"center"} justify="center">
-          
-          <Button ml={"68rem"}>
+     
+      <Button mt={"2rem"} ml={"75rem"}>
             <Link to="/admin/addproduct">Add Product</Link>
           </Button>
-          
-        </Flex>
-      </Container>
+          <h1 id="man">Manage Products</h1>
       <div id="admin">
-        {Products.map((data, index) => (
-          <div key={index}>
-            <div>
-              <img id="ad_img" src={data.image} alt="id" />
-              <h2 id="title">{data.title}</h2>
-              <p> ₹ {data.price}</p>
-              <h3>{data.category}</h3>
-            </div>
-            <div id="butt">
-              <Button onClick={() => deleteUser(data.id)}>
-                <Link to={"#"}>
-                  <Text>DELETE</Text>
-                </Link>
-              </Button>
-              <Button >
-                <Link to={`/admin/manage/${data.id}`}>
-                  <Text>EDIT</Text>
-                </Link>
-              </Button>
-            </div>
-          </div>
-        ))}
+        
+        {
+          product?.length && product.map((item)=>{
+            return <ProductItem key={item.id} {...item}/>
+          })
+        }
       </div>
     </div>
+    
+  
   );
 };
 

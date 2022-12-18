@@ -59,6 +59,41 @@ const reducer = (state = initialState, action) => {
                         ...state,
                         singleProduct: null
                     }
+                    case types.ADD_MEN_PRODUCTS_REQUEST:{
+                        return {
+                            ...state,isLoading:true
+                        }
+                    }
+                    case types.ADD_MEN_PRODUCTS_SUCCESS:
+                        return {
+                            ...state,isLoading:false,product:[...state.product,payload]
+                        }
+                    case types.ADD_MEN_PRODUCTS_FAILURE:
+                        return {
+                            ...state,isError:true
+                        }
+                    case types.UPDATE_MEN_PRODUCTS_REQUEST:
+                        return {
+                            ...state,isLoading:true
+                        }
+                    case types.UPDATE_MEN_PRODUCTS_SUCCESS:
+                         return {
+                            ...state,isLoading:false,product:state.product.map((item)=>item.id === payload.id ? payload:item)
+                         }
+                        case types.UPDATE_MEN_PRODUCTS_FAILURE:
+                            return {...state,isError:true,isLoading:false}
+                        case types.DELETE_MEN_PRODUCTS_REQUEST:
+                            return {
+                                ...state,isLoading:true
+                            }
+                        case types.DELETE_MEN_PRODUCTS_SUCCESS:
+                        let filter = state.product.filter((item)=>item.id !== payload)
+                            return {
+                                    ...state,isLoading:false,product:filter
+                            }
+                        case types.DELETE_MEN_PRODUCTS_FAILURE:
+                            return {...state,isLoading:false,isError:true}
+                    
  
   
         default:
