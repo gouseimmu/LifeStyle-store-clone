@@ -48,4 +48,18 @@ const getMenProductRequest = ()=>{
 
 }
 
+export const setSelectProduct = (payload)=>{
+    return{
+        type:types.SELECT_PRODUCT,
+        payload
+    }
+}
+export const setRemoveProduct = ()=>{
+    return{
+        type:types.REMOVE_PRODUCT,
+        
+    }
+}
+
+
 

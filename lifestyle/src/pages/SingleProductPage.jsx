@@ -64,6 +64,26 @@ const SingleProduct = () => {
        console.log(pro);
     }
   }, [id]);
+import { useSelector } from "react-redux";
+// import {useSelector} from 'react-redux'
+
+const SingleProduct = () => {
+  // const detailArr = useSelector((store)=>store.details)
+  const [data, setData] = useState([]);
+  const {singleProduct} = useSelector((store)=>store.AppReducer)
+
+// map the object using singleProduct 
+
+  const getData = () => {
+    return axios
+      .get(`https://koti-api.onrender.com/womenproducts`)
+      .then((res) => setData(res.data));
+  };
+  console.log(data);
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -102,6 +122,7 @@ const SingleProduct = () => {
     <div>
       <div className="title">
         <p>{currentProduct.title}</p>
+        <p>CODE Women Textured Longline Shrug</p>
       </div>
       <div className="container">
         <Grid
@@ -116,11 +137,41 @@ const SingleProduct = () => {
           <Img src={currentProduct.image} alt="siva" />
           <Img src={currentProduct.image} alt="siva" />
           <Img src={currentProduct.image} alt="siva" />
+
+          <Img
+            src="https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+            alt="siva"
+          />
+          <Img
+            src="https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+            alt="siva"
+          />
+          <Img
+            src="https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+            alt="siva"
+          />
+          <Img
+            src="https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+            alt="siva"
+          />
+          <Img
+            src="https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+            alt="siva"
+          />
+          <Img
+            src="https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+            alt="siva"
+          />
+          <Img
+            src="https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+            alt="siva"
+          />
         </Grid>
 
         <GridItem>
           <h1 style={{ color: "red" }}>
              {currentProduct.price}
+            ₹1439{" "}
             <span style={{ color: "gray", fontSize: "10px" }}>
               inclusive of all taxes
             </span>

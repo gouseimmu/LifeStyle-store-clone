@@ -33,7 +33,7 @@ const AddProduct = () => {
 
  const handleSubmit = (e)=>{
     e.preventDefault()
-    axios.post(`https://political-wise-diver.glitch.me/products`,data).then(navigate("/admin"))
+    axios.post(`https://political-wise-diver.glitch.me/products`,data).then(navigate("/admin")).then(window.location.reload())
  }
 
   return (
@@ -112,8 +112,8 @@ const AddProduct = () => {
                     value={category}
                     onChange={(e)=>setCategoty(e.target.value)}
                   >
-                    <option value={"New"}>Kurtas</option>
-                    <option value={"Best Selling"}>Womens</option>
+                    <option value={"Kurtas"}>Kurtas</option>
+                    <option value={"womens"}>Womens</option>
                   </Select>
                 </FormControl>
               </GridItem>
