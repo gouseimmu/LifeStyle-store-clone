@@ -3,14 +3,14 @@ import styles from './Flexbox.module.css'
 import { Link } from 'react-router-dom'
 
 
-const Flexbox= ({heading,data,data2}) => {
+const FlexboxWomen= ({heading,data,data2}) => {
   return (
     <div className={styles.flexbox_cont}>
       <h1>{heading}</h1>
       <hr></hr>
       <div className={styles.img_box_cont}>
         {data?.map((el)=> <div>
-          <Link to="/allmenproducts">
+            <Link to="/allwomenProducts">
           <img src={el.src} alt="img" />
           </Link>
           {el.text&&<h2 className={styles.h2}>{el.text}</h2>}
@@ -19,7 +19,7 @@ const Flexbox= ({heading,data,data2}) => {
 
       {data2&&<div className={styles.img_box_cont}>
         {data2?.map((el)=> <div>
-          <Link to="/allmenproducts">
+            <Link to="/allwomenProducts">
           <img src={el.src} alt="img" />
           </Link>
           {el.text&&<h2 className={styles.h2}>{el.text}</h2>}
@@ -29,4 +29,4 @@ const Flexbox= ({heading,data,data2}) => {
   )
 }
 
-export default Flexbox
+export default FlexboxWomen;

@@ -147,6 +147,7 @@ const handleLogout  = ()=>{
             <Image
               w={60}
               src="https://vrchennai.com/UploadFile/Storeimage/Lifestyle-big.png"
+              alt="logo"
             ></Image>
           </Flex>
           <Flex w={"100%"} gap={"30px"} pl="30px">
@@ -163,7 +164,7 @@ const handleLogout  = ()=>{
                 Women 
               </MenuButton> 
               <MenuList onMouseEnter={onOpenWomen} onMouseLeave={onCloseWomen}>
-              <Link to="/women"> <MenuItem>Ethnic & Fusion Wear</MenuItem></Link>
+              <Link to="/women"> <MenuItem>Women Wear</MenuItem></Link>
                 <MenuItem>Western Wear</MenuItem>
                 <MenuItem>Lingerie/Sleepwear</MenuItem>
                 <MenuItem>SportsWear</MenuItem>
@@ -306,7 +307,9 @@ const handleLogout  = ()=>{
           </Flex>
         </Box>
 
-        <Box border={"2px solid red"} className={"logo"}>
+        <Box
+        //  border={"2px solid red"} 
+         className={"logo"}>
           <Image
             w={"100px"}
             h={"60px"}
