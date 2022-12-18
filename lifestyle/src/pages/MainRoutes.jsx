@@ -14,7 +14,7 @@ function MainRoutes() {
       <Route path="/" element={<Home/>}></Route>
       <Route path="/women" element={<AllProducts/>}></Route>
       <Route path="/men" element={<AllMenProducts/>}></Route>
-      <Route path="`/menpro/${item.id}`" element={<SingleProduct/>}></Route>
+      <Route path="/menpro/:id" element={<SingleProduct/>}></Route>
       <Route path="login" element={<Signin/>}></Route>
       <Route path="signup" element={<Signup/>}></Route>
     </Routes>
