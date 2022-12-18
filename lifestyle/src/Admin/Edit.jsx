@@ -1,73 +1,85 @@
+import { Button } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import { getMenProductList, updateProducts } from "../Redux/AppReducer/action";
 import "./admin.css"
 
+
+// const data = {
+//   title: "",
+//   price: 0,
+//   image: "",
+//   category: "",
+// };
 function Edit() {
-  const [title, settitle] = useState("");
-  const [price, setprice] = useState(0);
-  const [image, setImage] = useState("");
-  const [category, setcategory] = useState("");
+  const [task, setTask] = useState({});
+   
+   
   const navigate = useNavigate();
   const { id } = useParams();
+  const dispatch = useDispatch()
+  const product = useSelector((store)=>store.AppReducer.product)
 
   useEffect(() => {
-    axios
-      .get(`https://political-wise-diver.glitch.me/products/${id}`)
-      .then((res) => {
-        settitle(res.data.title);
-        setprice(res.data.price);
-        setImage(res.data.image);
-        setcategory(res.data.category);
-      });
-  }, [id]);
+     if(product.length===0){
+      dispatch(getMenProductList())
+     }
+  }, [dispatch,product.length]);
 
-  const data = {
-    title: title,
-    price: price,
-    image: image,
-    category: category,
-  };
+
+  useEffect(()=>{
+    if(id){
+      const pro = product.find((item)=>item.id===Number(id))
+      pro && setTask(pro)
+    }
+  },[id,product])
 
   function Update(e) {
     e.preventDefault();
-    axios
-      .put(`https://political-wise-diver.glitch.me/products/${id}`, data)
-       .then(navigate("/admin")).then(window.location.reload())
+    dispatch(updateProducts(id,task)).then(()=>{
+      navigate("/admin")
+    })
       
   }
+ 
   return (
+    
+    
     <div id="bedit" >
       
-      <form id="edit" >
-      <h1 id="head">Edit Product</h1><br />
+       
+      <form id="edit" onSubmit={Update} >
+     <h1>Edit Product</h1>
         <input
-          value={title}
-          onChange={(e) => settitle(e.target.value)}
+          value={task?.title}
+          onChange={(e)=>setTask({...task,title:e.target.value})}
           type="text"
           placeholder="Enter Title"
         /> <br/>
         <input
-          value={price}
-          onChange={(e) => setprice(e.target.value)}
+          value={task?.price}
+          onChange={(e) => setTask({...task,price:e.target.value})}
           type="number"
           placeholder="Enter price"
         /> <br/>
         <input
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
+          value={task?.image}
+          onChange={(e) => setTask({...task,image:e.target.value})}
           type="url"
           placeholder="Enter  url."
         /> <br/>
         <select
           name="category"
-          value={category}
-          onChange={(e) => setcategory(e.target.value)}
+          value={task?.category}
+          onChange={(e) => setTask({...task,category:e.target.value})}
         >
           <option value={"Kurtas"}>Kurtas</option>
           <option value={"Womens"}>Womens</option>
         </select><br/>
-        <button type="submit" onClick={Update}>
+        <button type="submit" >
           UPDATE PRODUCT
         </button>
       </form>

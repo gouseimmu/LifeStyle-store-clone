@@ -59,10 +59,12 @@
 
 // export default Signin
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { adminLoginRequest, loginRequest } from "../Redux/AuthReducer/action";
-import { Button,Modal,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton,ModalBody,ModalFooter, useDisclosure, Input, FormControl, Checkbox, Heading } from '@chakra-ui/react'
+import { Button,Modal,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton,ModalBody,ModalFooter, useDisclosure, Input, FormControl, Checkbox, Heading, Text } from '@chakra-ui/react'
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 // import { adminLoginRequest, loginRequest } from "../../Redux/Auth/action";
 
@@ -74,7 +76,7 @@ const Signin = () => {
   const [passwordlogIn, setPasswordlogIn] = useState("");
   const dispatch = useDispatch();
   const store = useSelector((store) => store.AuthReducer);
-  console.log(store)
+  console.log(store.isAuth)
   function handleLogin(e) {
     e.preventDefault();
     let data = { email: emaillogIn, password: passwordlogIn };
@@ -99,7 +101,9 @@ const Signin = () => {
 
   return (
     <div>
-      <Button   onClick={onOpen}>Do you want to Continue ?</Button>
+       <Navbar/>
+      <Button ml={"40em"} mt={"2em"} onClick={onOpen}>Do you want to Continue ? Please Login</Button>
+      <Footer/>
      <Modal onClose={onClose} isOpen={isOpen} isCentered>
       <ModalOverlay />
       <ModalContent>
@@ -123,13 +127,15 @@ const Signin = () => {
             onChange={(event) => setPasswordlogIn(event.target.value)}
           />
           <br/>
-          <Checkbox isInvalid>Checkbox</Checkbox>
-          <br />
+          
+          
           <Button bg={'orange'} type="submit">SIGN IN</Button>
           <Button margin={10} color={"white"} bg={"blue.800"} onClick={onClose}>Close</Button>
           <br />
+          <Text>Already Registerd  <Link     to="/Signup">SignUp</Link></Text>
         </form>
         </ModalBody>
+         
       </div>
       
       {/* {flag && (
@@ -140,6 +146,7 @@ const Signin = () => {
             
         </ModalContent>
       </Modal>
+      
     </div>
   );
 };

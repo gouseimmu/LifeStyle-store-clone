@@ -9,6 +9,9 @@ const UserMenProducts = () => {
   const [searchParams] = useSearchParams();
   const location = useLocation();
   const navigate = useNavigate()
+  var box=[]
+  box=JSON.parse(localStorage.getItem("basket"))||[]
+  
 
   const productList = useSelector((store) => store.AppReducer.product);
   // console.log(productList)
@@ -32,17 +35,22 @@ const UserMenProducts = () => {
     }
   }, [location.search]);
 
-  const handleProductClick =(item)=>{
-    dispatch(setSelectProduct(item))
-    navigate(`/menpro/${item.id}`)
-  }
+  // const handleProductClick =(item)=>{
+  //   dispatch(setSelectProduct(item))
+  //   navigate(`/menpro/${item.id}`)
+  // }
+  const handleBasket=(el)=>{
+     
+    box.push(el)
+    localStorage.setItem("basket",JSON.stringify(box))
+   }
   return (
     <>
       {productList.length > 0 &&
         productList.map((menpro) => {
           return (
             // <Link to={`/menpro/${menpro.id}`}>
-              <div  key={menpro.id} className="product-list" onClick={()=>handleProductClick(menpro)}>
+              <div  key={menpro.id} className="product-list"  >
                 <div>
                   <img
                     src={menpro.image}
@@ -60,7 +68,7 @@ const UserMenProducts = () => {
                 <div>{menpro.category}</div>
 
                 <div>
-                  <button className="button-product">BUY NOW</button>
+                  <Link to="/basket"><button onClick={(el)=>handleBasket(el)} className="button-product">BUY NOW</button></Link>
                 </div>
               </div>
             // </Link>

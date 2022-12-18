@@ -3,6 +3,8 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 import "./Kids.css";
 import {arr} from "./KidsSlicker";
 
@@ -72,6 +74,7 @@ const ShoesBags = () => {
       };
   return (
     <div>
+      <Navbar/>
         <div >
         <div style={{width:"90%",margin:"auto",marginTop:"30px"}}>
         <Slider {...settings}>
@@ -110,6 +113,7 @@ const ShoesBags = () => {
         </div>
         
     </div>
+    <Footer/>
     </div>
   )
 }

@@ -15,25 +15,31 @@ import {
 } from "@chakra-ui/react";
  
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addProducts } from "../Redux/AppReducer/action";
  
+ 
+const ini = {
+  title:"",
+  price:0,
+  image:"",
+  category:"",
+}
 const AddProduct = () => {
- const [title,setTitle] = useState("")
- const [price,setPrice] = useState(0)
- const [image,setImage] = useState("")
- const [category,setCategoty] = useState("")
+  
+ const [data ,setData] = useState(ini)
 
- const data = {
-    title:title,
-    price:price,
-    image:image,
-    category:category,
- }
+
  const navigate = useNavigate()
+ const dispatch = useDispatch()
 
- const handleSubmit = (e)=>{
-    e.preventDefault()
-    axios.post(`https://political-wise-diver.glitch.me/products`,data).then(navigate("/admin")).then(window.location.reload())
+
+ const handleSubmit = ()=>{
+   
+    if(data){
+      dispatch(addProducts(data)).then(navigate("/admin"))
+    }
+    
  }
 
   return (
@@ -73,8 +79,8 @@ const AddProduct = () => {
                   <Input
                     placeholder="Enter title"
                     name="title"
-                    value={title}
-                    onChange={(e)=>setTitle(e.target.value)}
+                    value={data.title}
+                    onChange={(e)=>setData(e.target.value)}
                   ></Input>
                 </FormControl>
               </GridItem>
@@ -84,13 +90,13 @@ const AddProduct = () => {
                   <Input
                     placeholder="Enter Price"
                     name="price"
-                    value={price}
-                    onChange={(e)=>setPrice(e.target.value)}
+                    value={data.price}
+                    onChange={(e)=>setData(e.target.value)}
                   ></Input>
                 </FormControl>
               </GridItem>
               <GridItem colSpan={1}>
-                <FormControl>
+                <FormControl  >
                   <FormLabel> Image url:</FormLabel>
                   <Input
                     placeholder="Enter url"
@@ -98,8 +104,8 @@ const AddProduct = () => {
                   
                     variant="outline"
                     colorScheme={"red"}
-                    value={image}
-                    onChange={(e)=>setImage(e.target.value)}
+                    value={data.image}
+                    onChange={(e)=>setData(e.target.value)}
                   ></Input>
                 </FormControl>
               </GridItem>
@@ -109,8 +115,8 @@ const AddProduct = () => {
                   <FormLabel> Category:</FormLabel>
                   <Select
                     name="category"
-                    value={category}
-                    onChange={(e)=>setCategoty(e.target.value)}
+                    value={data.category}
+                    onChange={(e)=>setData(e.target.value)}
                   >
                     <option value={"Kurtas"}>Kurtas</option>
                     <option value={"womens"}>Womens</option>
@@ -123,7 +129,8 @@ const AddProduct = () => {
                   width={"full"}
                   size="lg"
                   bg={"green.400"}
-                  onClick={handleSubmit}
+                 
+                 onClick={handleSubmit}
                 >
                   Add Product
                 </Button>
