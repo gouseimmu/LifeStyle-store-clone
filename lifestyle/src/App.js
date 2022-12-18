@@ -1,19 +1,17 @@
-import React from 'react'
-
-import MainRoutes from './pages/MainRoutes';
-
-
-const App = () => {
-  return (
-    <div>
-      <MainRoutes/>
-    </div>
-  )
+ 
+import "./App.css";
+ 
+function App() {
+  return <div className="App">
+    
+  </div>;
 }
-
 export default App;
+ 
+
+ 
 
 
 
-
+ 
  
