@@ -296,13 +296,13 @@ const handleLogout  = ()=>{
               </MenuList>
             </Menu>
             {
-            store.isAdmin || store.isAuth ? <Button color={"black"} fontSize="2xl" onClick={handleLogout}>Log out</Button> :  <Link to="/Signin"><Button fontSize='1xl' color="black">Sign In</Button></Link>
+            store.isAdmin || store.isAuth ? <Button color={"black"} fontSize="1xl" onClick={handleLogout}>Log out</Button> :  <Link to="/Signin"><Button fontSize='1xl' color="black">Sign In</Button></Link>
            } 
             <Flex _hover={{ cursor: "Pointer" }}>
               <FaRegHeart />
             </Flex>
             <Flex _hover={{ cursor: "Pointer" }}>
-              <FaShoppingBag />
+              <Link to='/basket'><FaShoppingBag /></Link>
             </Flex>
           </Flex>
         </Box>

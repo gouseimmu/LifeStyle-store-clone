@@ -167,7 +167,7 @@ const handleSubmit = (e)=>{
       </div>
         </ModalContent>
       </Modal>
-      <Footer/>
+      
     </div>
   );
 };

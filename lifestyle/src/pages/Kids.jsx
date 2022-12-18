@@ -1,4 +1,4 @@
-import { Button, Grid, Img } from '@chakra-ui/react'
+import { Box, Button, Grid, Image, Img } from '@chakra-ui/react'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom';
@@ -6,6 +6,8 @@ import Slider from 'react-slick';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import "./Kids.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 import {arr} from "./KidsSlicker";
 
 
@@ -23,62 +25,68 @@ const Kids = () => {
         kids(sort,page)
     },[sort,page])
     const handleBasket=(el)=>{
-     
      box.push(el)
      localStorage.setItem("basket",JSON.stringify(box))
+     alert('added successfully')
     }
 
     const handleSingle=(el)=>{
         sessionStorage.setItem("single",JSON.stringify(el))
         navigate('/single')
     }
-    function SampleNextArrow(props) {
-        const { className, style, onClick } = props;
-        return (
-          <div
-            className={className}
-            style={{ ...style, display: "block", background: "gray" }}
-            onClick={onClick}
-          />
-        );
-      }
     
-      function SamplePrevArrow(props) {
-        const { className, style, onClick } = props;
-        return (
-          <div
-            className={className}
-            style={{ ...style, display: "block", background: "gray" }}
-            onClick={onClick}
-          />
-        );
-      }
-    const settings = {
-        dots: true,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        cssEase: "linear",
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
-      };
 
   return (
     <div >
       <Navbar/>
-        <div style={{width:"90%",margin:"auto",marginTop:"30px"}}>
-        <Slider {...settings}>
-        
-            {arr.map((el)=>{
-                return(
-                    <div>
-                        <Img h={500} w={1000} src={el.img}/>
-                    </div>
-                )
-            })}
-        
-        </Slider>
-        </div>
+      <Box w={'90%'} m={'auto'}>
+      <Carousel
+        autoPlay
+        infiniteLoop
+        stopOnHover
+        showArrows
+        showIndicators={"false"}
+        showStatus={"false"}
+        w={"full"}
+      >
+        <Image
+          id={"img2"}
+          src={'https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-Banner4-desktop-Kids-14Dec2022.jpg'}
+          m={"auto"}
+        />
+        <Image
+          id={"img1"}
+          src={
+            "https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-Uber-HP-Desktop-HeroBanner6-08Dec2022.gif"
+          }
+          m={"auto"}
+        />
+
+        <Image
+          id={"img3"}
+          src={
+            "https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-Uber-HP-Desktop-HeroBanner3-05Dec2022.jpg"
+          }
+          m={"auto"}
+        />
+        <Image
+          id={"img4"}
+          src={
+            "https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-Uber-HP-Desktop-HeroBanner5-05Dec2022.jpg"
+          }
+          m={"auto"}
+        />
+        <Image
+          id={"img5"}
+          src={
+            "https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-Uber-HP-Desktop-HeroBanner4-05Dec2022.jpg"
+          }
+          m={"auto"}
+        />
+      </Carousel>
+      </Box>
+
+      
 
         <div style={{margin:"20px", marginLeft:"75px"}}>
         <Button onClick={()=>setSort("asc")}>Asscending</Button>
@@ -91,7 +99,7 @@ const Kids = () => {
                         <Img src={el.image1} onClick={()=>handleSingle(el)}/>
                         <p>{el.description}</p>
                         <p>{el.cost}</p>
-                        <Link to="/basket"><Button bg={"orange"} onClick={()=>handleBasket(el)}>ADD TO BASKET</Button></Link>
+                        <Button bg={"orange"} onClick={()=>handleBasket(el)}>ADD TO BASKET</Button>
                     </div>
                 )
             })}
@@ -101,7 +109,7 @@ const Kids = () => {
             <Button>{page}</Button>
             <Button onClick={()=>setPage(page+1)} bg={'blue'}color={"white"} disabled={page===4}>Next</Button>
         </div>
-        <Footer/>
+        
     </div>
   )
 }

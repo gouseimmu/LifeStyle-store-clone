@@ -68,7 +68,7 @@ const UserMenProducts = () => {
                 <div>{menpro.category}</div>
 
                 <div>
-                  <Link to="/basket"><button onClick={(el)=>handleBasket(el)} className="button-product">BUY NOW</button></Link>
+                  <button onClick={(el)=>handleBasket(el)} className="button-product">BUY NOW</button>
                 </div>
               </div>
             // </Link>
