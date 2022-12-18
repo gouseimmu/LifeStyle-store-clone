@@ -21,20 +21,37 @@ import {
   FormLabel,
   RadioGroup,
   Radio,
+  Button,
+  useDisclosure,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  Input,
+  Select,
+  Checkbox,
+  ModalFooter,
 } from "@chakra-ui/react";
 import React from "react";
-import { ModalForm } from "./ModalForm";
+import { useNavigate } from "react-router";
+
 
 const Checkout = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
+  const initialRef = React.useRef(null);
+  const finalRef = React.useRef(null);
+  const handleClick = () => {
+    alert("Order Placed Successfully");
+    onClose();
+    navigate("/");
+  };
   return (
     <div>
-      <Container maxW="8xl" bg="white.600">
-        {/* <Box padding='4' bg='blue.400' color='black' maxW='8xl'></Box> */}
-
-        {/* Navbar */}
+      <Container mb={"370px"} pt={"100px"} maxW="8xl" bg="white.600">
         <Flex>
           <Box p="4">
-            {/* Lifestyle logo */}
             <Image
               boxSize="35px"
               width={"100%"}
@@ -59,32 +76,9 @@ const Checkout = () => {
             Select a shipping method
           </Text>
         </Box>
-        {/* <Divider orientation='horizontal' /> */}
-
-        {/* Shipping method */}
-        {/* <Flex color='white'>
-                
-                <Box flex='1' bg='tomato'>
-                    <Text>Box 1</Text>
-                </Box>
-
-                <Center w='100px' bg='green.500'>
-                    <Text>Box 1</Text>
-                </Center>
-                <Square bg='blue.500' size='150px'>
-                    <Text>Box 2</Text>
-                </Square>
-            </Flex> */}
-
         <Box>
-          <HStack spacing="24px">
-            {/* Shipping method */}
-            <Box w="60%" h="10" bg="white.500">
-              {/* <Box w='100%' p={4} color='white'>
-                            <Text textAlign={'left'} color={'black'}>
-                                Shipping method
-                            </Text>
-                        </Box> */}
+          <Flex gap={"400px"}>
+            <Box w="50%" h="10" bg="white.500">
               <Tabs isFitted variant="enclosed">
                 <TabList mb="1em">
                   <Tab>
@@ -105,64 +99,174 @@ const Checkout = () => {
                   <TabPanel>
                     {/* <p>Add new address</p> */}
                     <HStack spacing="24px">
-                      <Box
-                        w="50%"
-                        h="10"
-                        bg="white.500"
-                        textAlign={"left"}
-                        fontSize={"18px"}
-                      >
-                        <Text>Select your shipping address</Text>
-                      </Box>
 
-                      {/* Select your shipping address */}
-                      <Box
-                        w="50%"
-                        h="10"
-                        bg="white.500"
-                        textAlign={"left"}
-                        fontSize={"18px"}
-                      >
-                         
-                          {/* <FormLabel>Address Type</FormLabel> */}
-                          {/* <Input placeholder='Landmark' /> */}
-                          
-                      </Box>
-
-                      <Box w="50%" h="10" bg="white.500" textAlign={"right"}>
+                      {/* <Box w="50%" h="10" bg="white.500" textAlign={"right"}>
                         <ModalForm />
-                      </Box>
+                      </Box> */}
                     </HStack>
-                    {/* <Box>
-                                    <HStack spacing='24px'>
-                                        <Box w='50%' h='10'>
-                                            
-                                        </Box>
-                                        <Box w='50%' h='10' />
-                                        
-                                    </HStack>
-                                </Box> */}
                   </TabPanel>
 
                   {/* Pick from nearby store */}
                   <TabPanel>
                     <p>Click & Collect</p>
 
-                    <AspectRatio ratio={16 / 9}>
+                    <AspectRatio ratio={10 / 3}>
                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d3.375295414770757!3d6.5276316452784755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos!5e0!3m2!1sen!2sng!4v1567723392506!5m2!1sen!2sng" />
                     </AspectRatio>
                   </TabPanel>
                 </TabPanels>
               </Tabs>
             </Box>
-
-            {/* Order summary */}
-            <Box w="40%" h="10" bg="white.500">
-              <Box boxShadow="md" p="6" rounded="md" bg="white">
-                Order Summary
+            <Box p={"5px"} w={"50%"}>
+              <Flex border={"1px solid grey"} p={"10px"} alignItems={"center"}>
+                <Image
+                  w={"93px"}
+                  h={"85px"}
+                  src={
+                    "https://www.lifestylestores.com/static/icons/gift-box.png"
+                  }
+                />
+                <Text ml={"40px"} fontSize="3xl">
+                  Order Summery
+                </Text>
+              </Flex>
+              <Box
+                mt={"10px"}
+                py={"40px"}
+                border={"1px solid grey"}
+                px={"10px"}
+              >
+                <Flex>
+                  <Text>Total MRP</Text>
+                  <Spacer />
+                  <Text>$999</Text>
+                </Flex>
+                <Flex>
+                  <Text>shipping Charge</Text>
+                  <Spacer />
+                  <Text>00</Text>
+                </Flex>
               </Box>
+              <Button
+                onClick={onOpen}
+                mt={"20px"}
+                color={"white"}
+                bgColor={"rgb(250, 166, 25)"}
+                w={"full"}
+              >
+                Checkout Now
+              </Button>
+
+              <Modal
+                initialFocusRef={initialRef}
+                finalFocusRef={finalRef}
+                isOpen={isOpen}
+                onClose={onClose}
+                size={"xl"}
+              >
+                <ModalOverlay />
+                <ModalContent>
+                  <ModalHeader>Add a new Address</ModalHeader>
+
+                  <ModalCloseButton />
+
+                  <ModalBody pb={6}>
+                    {/* Full Name */}
+                    <FormControl>
+                      <FormLabel>Full Name</FormLabel>
+                      <Input
+                        ref={initialRef}
+                        placeholder="Enter your full name"
+                      />
+                    </FormControl>
+
+                    {/* Mobile Number */}
+                    <FormControl mt={4}>
+                      <FormLabel>Mobile Number</FormLabel>
+                      <Input placeholder="Enter your mobile number" />
+                    </FormControl>
+
+                    {/* Pincode */}
+                    <FormControl mt={4}>
+                      <FormLabel>Pincode</FormLabel>
+                      <Input placeholder="Enter your Pincode" />
+                    </FormControl>
+
+                    {/* City */}
+                    <FormControl mt={4}>
+                      <FormLabel>City</FormLabel>
+                      <Input placeholder="Enter your City or Town" />
+                    </FormControl>
+
+                    {/* State */}
+                    <FormControl mt={4}>
+                      <FormLabel>State</FormLabel>
+                      <Select placeholder="Select your State">
+                        <option value="option1">Andhra Pradesh</option>
+                        <option value="option2">Mumbai</option>
+                        <option value="option3">Karnataka</option>
+                      </Select>
+                    </FormControl>
+
+                    {/* Building name */}
+                    <FormControl mt={4}>
+                      <FormLabel>Building name or number</FormLabel>
+                      <Input placeholder="Enter Building Name" />
+                    </FormControl>
+
+                    {/* Strret name */}
+                    <FormControl mt={4}>
+                      <FormLabel>Street name or number</FormLabel>
+                      <Input placeholder="Flat/House number, Floor, Building" />
+                    </FormControl>
+
+                    {/* Landmark */}
+                    <FormControl mt={4}>
+                      <FormLabel>Landmark</FormLabel>
+                      <Input placeholder="Landmark" />
+                    </FormControl>
+
+                    {/* Address Type */}
+                    <FormControl mt={4}>
+                      <FormLabel>Address Type</FormLabel>
+                      {/* <Input placeholder='Landmark' /> */}
+                      <RadioGroup defaultValue="0">
+                        <Stack spacing={5} direction="row">
+                          <Radio colorScheme="orange" value="1">
+                            Home
+                          </Radio>
+                          <Radio colorScheme="orange" value="2">
+                            Office
+                          </Radio>
+                        </Stack>
+                      </RadioGroup>
+                    </FormControl>
+
+                    {/* Default Address */}
+                    <FormControl mt={4}>
+                      {/* <FormLabel>Landmark</FormLabel> */}
+                      {/* <Input placeholder='Landmark' /> */}
+                      <Checkbox colorScheme="orange">
+                        Use this as my default shipping address
+                      </Checkbox>
+                    </FormControl>
+                  </ModalBody>
+
+                  <ModalFooter>
+                    <Button
+                      onClick={handleClick}
+                      colorScheme="orange"
+                      mr={3}
+                      width={"100%"}
+                    >
+                      Ship to this Address
+                    </Button>
+                    {/* <Button onClick={onClose}>Cancel</Button> */}
+                  </ModalFooter>
+                </ModalContent>
+              </Modal>
             </Box>
-          </HStack>
+          </Flex>
         </Box>
       </Container>
     </div>

@@ -1,4 +1,4 @@
-import { Box, Button, Flex, GridItem, Heading, HStack, Img, Input, VStack } from '@chakra-ui/react';
+import { Button, Flex, GridItem, Heading, HStack, Img, Input, VStack } from '@chakra-ui/react';
 import { FaShareAltSquare, FaVine, FaZhihu } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import './Kids.css';
@@ -6,43 +6,40 @@ import React, { useEffect, useState } from "react";
 import "./SingleProduct.css";
 import Slider from "react-slick";
 import axios from "axios";
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 
 const Single = () => {
-    const navigate=useNavigate()
-    var box=[]
-    box=JSON.parse(localStorage.getItem("basket"))||[]
-    const [data, setData] = useState([]);
-    const [,setShoe]=useState([])
+  const navigate = useNavigate();
+  var box = [];
+  box = JSON.parse(localStorage.getItem("basket")) || [];
+  const [data, setData] = useState([]);
+  const [, setShoe] = useState([]);
 
+  var obj = JSON.parse(sessionStorage.getItem("single")) || {};
 
- var obj=JSON.parse(sessionStorage.getItem("single"))||{}
-
- const handleBasket=()=>{
-    navigate("/basket")
+  const handleBasket = () => {
+    navigate("/basket");
     // box.push(obj)
     // localStorage.setItem("basket",JSON.stringify(box))
-    if(box.length>=1){
-        box.map((dup,i)=>{
-             if(dup.id!==obj.id){
-                box.push(obj)
-                localStorage.setItem("basket",JSON.stringify(box))
-             }
-        })
-       }else{
-        box.push(obj)
-        localStorage.setItem("basket",JSON.stringify(box))
-       }
- }
+    if (box.length >= 1) {
+      box.map((dup, i) => {
+        if (dup.id !== obj.id) {
+          box.push(obj);
+          localStorage.setItem("basket", JSON.stringify(box));
+        }
+      });
+    } else {
+      box.push(obj);
+      localStorage.setItem("basket", JSON.stringify(box));
+    }
+  };
   const getData = () => {
     return axios
       .get(`https://ravishiva-1pi.onrender.com/kidsware`)
       .then((res) => setData(res.data));
   };
-//   console.log(data)
-const shoeData = () => {
+  //   console.log(data)
+  const shoeData = () => {
     return axios
       .get(`https://test-api-9m2w.onrender.com/shoes&bags`)
       .then((res) => setShoe(res.data));
@@ -50,7 +47,7 @@ const shoeData = () => {
 
   useEffect(() => {
     getData();
-    shoeData()
+    shoeData();
   }, []);
 
   function SampleNextArrow(props) {
@@ -75,7 +72,6 @@ const shoeData = () => {
     );
   }
 
- 
   const settings = {
     dots: false,
     infinite: true,
@@ -88,77 +84,41 @@ const shoeData = () => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
-  const handleSlick1=(el)=>{
+  const handleSlick1 = (el) => {
     // box.push(el)
     // localStorage.setItem("basket",JSON.stringify(box))
-    navigate('/basket')
-    if(box.length>=1){
-        box.map((dup,i)=>{
-             if(dup.id!==el.id){
-                box.push(el)
-                localStorage.setItem("basket",JSON.stringify(box))
-             }
-        })
-       }else{
-        box.push(el)
-        localStorage.setItem("basket",JSON.stringify(box))
-       }
-  }
-  const handleSlick2=(el)=>{
+    navigate("/basket");
+    if (box.length >= 1) {
+      box.map((dup, i) => {
+        if (dup.id !== el.id) {
+          box.push(el);
+          localStorage.setItem("basket", JSON.stringify(box));
+        }
+      });
+    } else {
+      box.push(el);
+      localStorage.setItem("basket", JSON.stringify(box));
+    }
+  };
+  const handleSlick2 = (el) => {
     // box.push(el)
     // localStorage.setItem("basket",JSON.stringify(box))
-    navigate('/basket')
-    if(box.length>=1){
-        box.map((dup,i)=>{
-             if(dup.id!==el.id){
-                box.push(el)
-                localStorage.setItem("basket",JSON.stringify(box))
-             }
-        })
-       }else{
-        box.push(el)
-        localStorage.setItem("basket",JSON.stringify(box))
-       }
-  }
-//   const handleSlick3=(el)=>{
-//     // box.push(el)
-//     // localStorage.setItem("basket",JSON.stringify(box))
-//     navigate('/basket')
-//     if(box.length>=1){
-//         box.map((dup,i)=>{
-//              if(dup.id!==el.id){
-//                 box.push(el)
-//                 localStorage.setItem("shoe",JSON.stringify(box))
-//              }
-//         })
-//        }else{
-//         box.push(el)
-//         localStorage.setItem("shoe",JSON.stringify(box))
-//        }
-//   }
-    
-//   const handleSlick4=(el)=>{
-//     // box.push(el)
-//     // localStorage.setItem("basket",JSON.stringify(box))
-//     navigate('/basket')
-//     if(box.length>=1){
-//         box.map((dup,i)=>{
-//              if(dup.id!==el.id){
-//                 box.push(el)
-//                 localStorage.setItem("shoe",JSON.stringify(box))
-//              }
-//         })
-//        }else{
-//         box.push(el)
-//         localStorage.setItem("shoe",JSON.stringify(box))
-//        }
-//   }
+    navigate("/basket");
+    if (box.length >= 1) {
+      box.map((dup, i) => {
+        if (dup.id !== el.id) {
+          box.push(el);
+          localStorage.setItem("basket", JSON.stringify(box));
+        }
+      });
+    } else {
+      box.push(el);
+      localStorage.setItem("basket", JSON.stringify(box));
+    }
+  };
+ 
   return (
     <div>
-       <Box w={'full'} position={'fixed'} zIndex={'10'}>
-        <Navbar />
-        </Box>
-       
     <div style={{display:"flex",gap:"30px"}}>
 
          <div className='single'>
@@ -193,53 +153,68 @@ const shoeData = () => {
             padding={1}
             borderRadius={5} src={obj.image1}/>
 
-          <p style={{ color: "gray" }}>
-            Color:{" "}
-            <sapn style={{ fontSize: "15px", color: "black" }}>Blue</sapn>
-          </p>
-          <Button style={{ backgroundColor: "orange", marginTop: "30px" }} onClick={()=>handleBasket()}>
-            ADD TO BASKET
-          </Button>
-          <HStack fontSize={10} marginTop={5} justifyContent={"center"} gap={10} >
-            <p>
-              <FaVine/>
-              Add to favourites
+            <p style={{ color: "gray" }}>
+              Color:{" "}
+              <sapn style={{ fontSize: "15px", color: "black" }}>Blue</sapn>
             </p>
-            <p>
-              <FaShareAltSquare />
-              Share
-            </p>
-          </HStack>
-          <VStack style={{ fontSize: "10px", marginTop: "20px" }}>
-            <p>PROMOTION OFFER</p>
-            <p>
-              Buy 2 Get 20 Percent Off{" "}
-              <span style={{ textDecoration: "underline" }}>
-                Browse promotions
-              </span>
-            </p>
-          </VStack>
-          <VStack marginTop={"30"}>
-            <Button>
-             
-              Click & Collect
+            <Button
+              style={{ backgroundColor: "orange", marginTop: "30px" }}
+              onClick={() => handleBasket()}
+            >
+              ADD TO BASKET
             </Button>
-            <p>Order this product now and collect it from a store of your choice. Learn more</p>
-            <h4>Pay in installments</h4>
-            <p>Pay in easy installments on orders of ₹ 3,000 or more. Available for select banks. Learn more</p>
-          </VStack>
-        </GridItem>
-        <Flex gap={10} margin={'40px'}>
-            <Input placeholder='enter Your Pincode' />
-            <Button bg={'orange'}>Check</Button>
-        </Flex>
-        <Heading>Overview</Heading>
-        <h1>Stay in vogue and redefine your trends with this t-shirt. Speaking volumes of its style quotient, this t-shirt highlights a henley neck, short sleeves, and a straight hemline to lend a perfect silhouette.</h1>
+            <HStack
+              fontSize={10}
+              marginTop={5}
+              justifyContent={"center"}
+              gap={10}
+            >
+              <p>
+                <FaVine />
+                Add to favourites
+              </p>
+              <p>
+                <FaShareAltSquare />
+                Share
+              </p>
+            </HStack>
+            <VStack style={{ fontSize: "10px", marginTop: "20px" }}>
+              <p>PROMOTION OFFER</p>
+              <p>
+                Buy 2 Get 20 Percent Off{" "}
+                <span style={{ textDecoration: "underline" }}>
+                  Browse promotions
+                </span>
+              </p>
+            </VStack>
+            <VStack marginTop={"30"}>
+              <Button>Click & Collect</Button>
+              <p>
+                Order this product now and collect it from a store of your
+                choice. Learn more
+              </p>
+              <h4>Pay in installments</h4>
+              <p>
+                Pay in easy installments on orders of ₹ 3,000 or more. Available
+                for select banks. Learn more
+              </p>
+            </VStack>
+          </GridItem>
+          <Flex gap={10} margin={"40px"}>
+            <Input placeholder="enter Your Pincode" />
+            <Button bg={"orange"}>Check</Button>
+          </Flex>
+          <Heading>Overview</Heading>
+          <h1>
+            Stay in vogue and redefine your trends with this t-shirt. Speaking
+            volumes of its style quotient, this t-shirt highlights a henley
+            neck, short sleeves, and a straight hemline to lend a perfect
+            silhouette.
+          </h1>
         </div>
-        
-    </div>
-    
-    <GridItem className="slicker">
+      </div>
+
+      <GridItem className="slicker">
         <h1 className="h1">You may also like</h1>
         <Slider {...settings}>
           {data.map((el) => {
@@ -248,7 +223,12 @@ const shoeData = () => {
                 <Img src={el.image1} />
                 <h1>${el.cost}</h1>
                 <p>{el.description}</p>
-                <Button style={{ backgroundColor: "orange", marginTop: "30px" }} onClick={()=>handleSlick1(el)} >ADD TO BASKET</Button>
+                <Button
+                  style={{ backgroundColor: "orange", marginTop: "30px" }}
+                  onClick={() => handleSlick1(el)}
+                >
+                  ADD TO BASKET
+                </Button>
               </div>
             );
           })}
@@ -263,7 +243,12 @@ const shoeData = () => {
                 <Img src={el.image2} />
                 <h1>${el.cost}</h1>
                 <p>{el.description}</p>
-                <Button style={{ backgroundColor: "orange", marginTop: "30px" }} onClick={()=>handleSlick2(el)} >ADD TO BASKET</Button>
+                <Button
+                  style={{ backgroundColor: "orange", marginTop: "30px" }}
+                  onClick={() => handleSlick2(el)}
+                >
+                  ADD TO BASKET
+                </Button>
               </div>
             );
           })}
@@ -278,7 +263,12 @@ const shoeData = () => {
                 <Img src={el.image1} />
                 <h1>${el.cost}</h1>
                 <p>{el.description}</p>
-                <Button style={{ backgroundColor: "orange", marginTop: "30px" }} onClick={()=>handleSlick1(el)} >ADD TO BASKET</Button>
+                <Button
+                  style={{ backgroundColor: "orange", marginTop: "30px" }}
+                  onClick={() => handleSlick1(el)}
+                >
+                  ADD TO BASKET
+                </Button>
               </div>
             );
           })}
@@ -293,7 +283,12 @@ const shoeData = () => {
                 <Img src={el.image2} />
                 <h1>${el.cost}</h1>
                 <p>{el.description}</p>
-                <Button style={{ backgroundColor: "orange", marginTop: "30px" }} onClick={()=>handleSlick2(el)} >ADD TO BASKET</Button>
+                <Button
+                  style={{ backgroundColor: "orange", marginTop: "30px" }}
+                  onClick={() => handleSlick2(el)}
+                >
+                  ADD TO BASKET
+                </Button>
               </div>
             );
           })}
@@ -301,7 +296,7 @@ const shoeData = () => {
       </GridItem>
       <Footer/>
     </div>
-  )
-}
+  );
+};
 
-export default Single
+export default Single;

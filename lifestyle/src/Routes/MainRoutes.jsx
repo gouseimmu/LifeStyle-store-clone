@@ -50,11 +50,4 @@ const MainRoutes = () => {
 
 export default MainRoutes;
 
-{
-  /*        
-        </Routes>
-      );
-    };
-  
-    export default MainRoutes; */
-}
+

@@ -4,10 +4,9 @@
 // import { useDispatch, useSelector } from 'react-redux';
 // import { adminLoginRequest, loginRequest } from '../Redux/AuthReducer/action';
 
-
 // const Signin = () => {
 //     const { isOpen, onOpen, onClose } = useDisclosure()
-    
+
 //   const navigate = useNavigate();
 //   const [emaillogIn, setEmaillogIn] = useState("");
 //   const [passwordlogIn, setPasswordlogIn] = useState("");
@@ -62,42 +61,49 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { adminLoginRequest, loginRequest } from "../Redux/AuthReducer/action";
-import { Button,Modal,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton,ModalBody,ModalFooter, useDisclosure, Input, FormControl, Checkbox, Heading, Text } from '@chakra-ui/react'
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+  Input,
+  FormControl,
+  Checkbox,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 // import { adminLoginRequest, loginRequest } from "../../Redux/Auth/action";
 
-
 const Signin = () => {
   const navigate = useNavigate();
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const [emaillogIn, setEmaillogIn] = useState("");
   const [passwordlogIn, setPasswordlogIn] = useState("");
   const dispatch = useDispatch();
   const store = useSelector((store) => store.AuthReducer);
-  console.log(store.isAuth)
+  console.log(store.isAuth);
   function handleLogin(e) {
     e.preventDefault();
     let data = { email: emaillogIn, password: passwordlogIn };
     if (emaillogIn === "admin@admin.com" && passwordlogIn === "admin") {
-      
       dispatch(adminLoginRequest(data));
-      console.log("Admin Successful")
-       navigate("/admin")
+      console.log("Admin Successful");
+      navigate("/admin");
     } else {
-      dispatch(loginRequest(data))
-       
+      dispatch(loginRequest(data));
     }
-    
   }
-  if(store.isAuth){
-    navigate("/")
+  if (store.isAuth) {
+    navigate("/");
   }
-
- 
-
-  
 
   return (
     <div>
@@ -143,10 +149,8 @@ const Signin = () => {
             //       Please Fill Correct Info 
             //    </Alert> 
             )} */}
-            
         </ModalContent>
       </Modal>
-      
     </div>
   );
 };

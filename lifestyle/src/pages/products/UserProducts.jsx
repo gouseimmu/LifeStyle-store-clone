@@ -41,7 +41,7 @@ const UserProducts = () => {
         return (
 
 
-         <Link to={`/menpro/${menpro.id}`}>
+         
           <div key={menpro.id} className="product-list" >
               <div>
               <img src={menpro.image} alt={menpro.title} style={{ height: "300px", width: "100%" }} />
@@ -55,10 +55,10 @@ const UserProducts = () => {
               <div>
               {menpro.category}
               </div>
-              <button className='button-product'>ADD TO BASKET</button>            
+              <button onClick={()=>alert('added successfuly')} className='button-product'>ADD TO BASKET</button>            
 
               
-          </div></Link>
+          </div>
 
         )
 
