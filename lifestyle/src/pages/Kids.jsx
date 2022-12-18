@@ -23,7 +23,6 @@ const Kids = () => {
         kids(sort,page)
     },[sort,page])
     const handleBasket=(el)=>{
-     
      box.push(el)
      localStorage.setItem("basket",JSON.stringify(box))
     }
