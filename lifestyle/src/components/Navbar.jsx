@@ -28,11 +28,13 @@ import {
 } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link,   useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logOut } from "../Redux/AuthReducer/action";
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-
+const navigate = useNavigate()
   const {
     isOpen: isOpenWomen,
     onOpen: onOpenWomen,
@@ -68,6 +70,14 @@ function Navbar() {
     onOpen: onOpenMore,
     onClose: onCloseMore,
   } = useDisclosure();
+
+  const store = useSelector((store)=> store.AuthReducer);
+ 
+const dispatch = useDispatch();
+const handleLogout  = ()=>{
+  dispatch(logOut)
+  navigate("/")
+}
 
   return (
     <Box>
@@ -284,8 +294,9 @@ function Navbar() {
                 <MenuItem>SBI Offers</MenuItem>
               </MenuList>
             </Menu>
-           <Link to="/Signin"> <Button variant="ghost">Sign In</Button></Link>
-           <Link to="/Signup"> <Button variant="ghost">Sign Up</Button></Link>
+            {
+            store.isAdmin || store.isAuth ? <Button color={"black"} fontSize="2xl" onClick={handleLogout}>Log out</Button> :  <Link to="/Signin"><Button fontSize='1xl' color="black">Sign In</Button></Link>
+           } 
             <Flex _hover={{ cursor: "Pointer" }}>
               <FaRegHeart />
             </Flex>

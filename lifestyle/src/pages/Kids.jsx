@@ -21,17 +21,7 @@ const Kids = () => {
         kids(sort,page)
     },[sort,page])
     const handleBasket=(el)=>{
-    //    if(box.length>=1){
-    //     box.map((dup,i)=>{
-    //          if(dup.id!==el.id){
-    //             box.push(el)
-    //             localStorage.setItem("basket",JSON.stringify(box))
-    //          }
-    //     })
-    //    }else{
-    //     box.push(el)
-    //     localStorage.setItem("basket",JSON.stringify(box))
-    //    }      
+     
      box.push(el)
      localStorage.setItem("basket",JSON.stringify(box))
     }

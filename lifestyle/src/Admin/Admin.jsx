@@ -14,13 +14,14 @@ import "./admin.css";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import Navbar from "../components/Navbar";
 
 const Admin = () => {
   const [Products, setProducts] = useState([]);
    const navigate = useNavigate()
   const getData = () => {
     axios
-      .get(`https://political-wise-diver.glitch.me/products`)
+      .get(`https://solar-juvenile-camel.glitch.me/menpro`)
       .then((r) => {
         setProducts(r.data);
       })
@@ -35,12 +36,13 @@ const Admin = () => {
 
   const deleteUser = (id) => {
     axios
-      .delete(`https://political-wise-diver.glitch.me/products/${id}`)
+      .delete(`https://solar-juvenile-camel.glitch.me/menpro/${id}`)
       .then(navigate("/admin")).then(window.location.reload())
   };
 
   return (
     <div>
+      <Navbar/>
       <Container maxW={"container"} padding="5">
       <Heading textAlign={"center"}>Manage Products</Heading>
         <Flex gap="10" alignContent={"center"} justify="center">

@@ -71,6 +71,8 @@ import { Button, Heading, Input, Modal, ModalBody, ModalContent, ModalHeader, Mo
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import { signUpRequest } from "../Redux/AuthReducer/action";
 
 const initState = {
@@ -99,15 +101,18 @@ const handleSubmit = (e)=>{
    navigate("/Signin")
 }
 
- 
+ if(isAuth){
+  navigate("/allwomenProducts")
+ }
   return (
     <div className="box">
-      <Button onClick={onOpen}>Signup</Button>
+      <Navbar/>
+      <Button ml={"40em"} mt={"2em"}  onClick={onOpen}>Do you Want to Continue ? Please Signup</Button>
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
        <ModalOverlay />
         <ModalContent>
       <div className="outerDiv">
-      <ModalHeader>Sinup</ModalHeader>
+      <ModalHeader  >Signup</ModalHeader>
       <ModalBody>
         <div className="innerDiv">
           <form onSubmit={handleSubmit} style={{margin:'10px'}}>
@@ -162,6 +167,7 @@ const handleSubmit = (e)=>{
       </div>
         </ModalContent>
       </Modal>
+      <Footer/>
     </div>
   );
 };

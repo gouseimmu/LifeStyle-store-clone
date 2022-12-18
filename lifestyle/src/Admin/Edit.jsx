@@ -13,7 +13,7 @@ function Edit() {
 
   useEffect(() => {
     axios
-      .get(`https://political-wise-diver.glitch.me/products/${id}`)
+      .get(`https://solar-juvenile-camel.glitch.me/menpro/${id}`)
       .then((res) => {
         settitle(res.data.title);
         setprice(res.data.price);
@@ -32,7 +32,7 @@ function Edit() {
   function Update(e) {
     e.preventDefault();
     axios
-      .put(`https://political-wise-diver.glitch.me/products/${id}`, data)
+      .put(`https://solar-juvenile-camel.glitch.me/menpro/${id}`, data)
        .then(navigate("/admin")).then(window.location.reload())
       
   }
@@ -40,7 +40,7 @@ function Edit() {
     <div id="bedit" >
       
       <form id="edit" >
-      <h1 id="head">Edit Product</h1><br />
+     <h1>Edit Product</h1>
         <input
           value={title}
           onChange={(e) => settitle(e.target.value)}

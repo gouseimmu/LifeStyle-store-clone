@@ -33,7 +33,7 @@ const AddProduct = () => {
 
  const handleSubmit = (e)=>{
     e.preventDefault()
-    axios.post(`https://political-wise-diver.glitch.me/products`,data).then(navigate("/admin")).then(window.location.reload())
+    axios.post(`https://solar-juvenile-camel.glitch.me/menpro`,data).then(navigate("/admin")).then(window.location.reload())
  }
 
   return (

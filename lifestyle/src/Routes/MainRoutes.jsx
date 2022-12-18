@@ -41,7 +41,7 @@ const MainRoutes = () => {
         <Route path="/checkout" element={<Checkout/>}></Route>
 
         <Route path="/admin" element={<Admin />}></Route>
-        <Route path="/edit/:id" element={<Edit />}></Route>
+        <Route path="/admin/manage/:id" element={<Edit />}></Route>
         <Route path="/admin/addProduct" element={<AddProduct />}></Route>
       </Routes>
     </div>
