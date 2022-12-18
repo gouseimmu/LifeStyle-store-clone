@@ -1,0 +1,80 @@
+
+
+form{
+    width: 300px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+}
+form>input,#password{
+    padding: 10px ;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(167, 164, 164);
+    width: 300px;
+    height: 35px;
+    background-color: rgb(247, 245, 245);
+    display: block;
+    margin: auto;
+}
+button[type=submit] {
+    width: 19em;  height: 3em;
+    border: 0px;
+    border-radius: 13px;
+    color: rgb(0, 0, 0);
+    margin-top: 12px;
+}
+button[type=submit]:hover {
+    background-color: rgb(243, 102, 9);
+    color: white;
+    font-weight: bold;
+    
+}
+ #edit{
+    margin-top: 10em;
+ }
+ #head{
+     font-size: 16px;
+     font-weight: bold;
+ }
+ #bedit{
+    background-color: rgb(10, 174, 207);
+    height: 100%;
+    width: 40%;
+    margin: auto;
+    border-radius: 15px;
+     
+    
+ }
+
+ #admin  {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
+    margin: auto;
+    gap: 1em;
+    width: 80%;
+    height: auto;
+    padding: 15px;
+    background-color: rgb(215, 199, 157);
+    border-radius: 12px;
+   
+     
+     
+    
+ }
+ #butt{
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+ }
+  #ad_img{
+    border-radius: 15px;
+    
+  }
+
+  #title{
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 1em;
+  }
