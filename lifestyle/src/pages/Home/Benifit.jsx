@@ -1,4 +1,11 @@
-import { Divider, Flex, Heading, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Flex,
+  Heading,
+  Image,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import React from "react";
 
 function Benifit() {
@@ -23,7 +30,7 @@ function Benifit() {
         mb={"20px"}
         borderWidth={"2px"}
       />
-      <Flex>
+      <SimpleGrid gap={3} minChildWidth="250px">
         <Image
           src={
             "https://lmsin.net/cdn-cgi/image/w=410,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-DesktopUberHP-OurBenefit1-02Dec2022.jpg"
@@ -45,7 +52,8 @@ function Benifit() {
 
         {/* <Image src={""} m={"auto"} />
         <Image src={""} m={"auto"} /> */}
-      </Flex>
+      </SimpleGrid>
+
       <Heading
         fontFamily={
           'ProximaNova-Regular,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"'
@@ -65,18 +73,38 @@ function Benifit() {
         mb={"20px"}
         borderWidth={"2px"}
       />
-      <Flex>
-        
-
-        <Image src={"https://lmsin.net/cdn-cgi/image/w=300,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-LimitedSale-Desk-Banner1-13Dec22.jpg"} m={"auto"} />
-        <Image src={"https://lmsin.net/cdn-cgi/image/w=300,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-LimitedSale-Desk-Banner2-13Dec22.jpg"} m={"auto"} />
-        <Image src={"https://lmsin.net/cdn-cgi/image/w=300,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-LimitedSale-Desk-Banner3-13Dec22.jpg"} m={"auto"} />
-        <Image src={"https://lmsin.net/cdn-cgi/image/w=300,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-LimitedSale-Desk-Banner4-13Dec22.jpg"} m={"auto"} />
+      <SimpleGrid gap={3} minChildWidth="150px">
+        <Image
+          src={
+            "https://lmsin.net/cdn-cgi/image/w=300,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-LimitedSale-Desk-Banner1-13Dec22.jpg"
+          }
+          m={"auto"}
+        />
+        <Image
+          src={
+            "https://lmsin.net/cdn-cgi/image/w=300,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-LimitedSale-Desk-Banner2-13Dec22.jpg"
+          }
+          m={"auto"}
+        />
+        <Image
+          src={
+            "https://lmsin.net/cdn-cgi/image/w=300,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-LimitedSale-Desk-Banner3-13Dec22.jpg"
+          }
+          m={"auto"}
+        />
+        <Image
+          src={
+            "https://lmsin.net/cdn-cgi/image/w=300,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-UberHP-LimitedSale-Desk-Banner4-13Dec22.jpg"
+          }
+          m={"auto"}
+        />
         {/* <Image src={""} m={"auto"} /> */}
-      </Flex>
+      </SimpleGrid>
       <Image
-      src={'https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/Uber-HP-Desktop-PromoStrip3-06Dec2022.gif'}
-      my={'30px'}
+        src={
+          "https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/Uber-HP-Desktop-PromoStrip3-06Dec2022.gif"
+        }
+        my={"30px"}
       />
     </div>
   );

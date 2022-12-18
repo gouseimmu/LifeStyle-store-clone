@@ -13,6 +13,7 @@ function Carausel() {
         showArrows
         showIndicators={"false"}
         showStatus={"false"}
+        w={"full"}
       >
         <Image
           id={"img2"}
@@ -52,7 +53,9 @@ function Carausel() {
         />
       </Carousel>
       <Image
-      src={'https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/Uber-HP-Desktop-PromoStrip2-08Dec2022.jpg'}
+        src={
+          "https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/Uber-HP-Desktop-PromoStrip2-08Dec2022.jpg"
+        }
       />
     </div>
   );

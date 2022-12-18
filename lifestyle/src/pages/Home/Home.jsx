@@ -19,7 +19,7 @@ function Home() {
         <Navbar />
         </Box>
       
-      <Box  w={"80%"} m={"auto"} pt={'100px'}>
+      <Box   w={"80%"} m={"auto"} pt={'100px'}>
         <Carausel />
         <Benifit />
         <WinterStore />

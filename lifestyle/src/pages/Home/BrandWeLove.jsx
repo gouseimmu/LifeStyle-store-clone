@@ -1,10 +1,10 @@
-import { Divider, Grid, GridItem, Heading, Image } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Divider, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
+import React from "react";
 
 function BrandWeLove() {
   return (
     <div>
-        <Heading
+      <Heading
         fontFamily={
           'ProximaNova-Regular,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"'
         }
@@ -23,46 +23,94 @@ function BrandWeLove() {
         mb={"20px"}
         borderWidth={"2px"}
       />
-      <Grid templateColumns='repeat(6, 1fr)' gap={6} >
+      <Box className={"brandWeLove"}>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner1-29Nov22.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner1-29Nov22.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner2-29Nov22.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner2-29Nov22.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner3-29Nov22.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner3-29Nov22.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner4-15Dec22.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner4-15Dec22.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner5-29Nov22.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner5-29Nov22.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner6-29Nov22.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner6-29Nov22.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner7-15Dec22A.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner7-15Dec22A.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner8-15Dec22.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner8-15Dec22.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner9-29Nov22.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner9-29Nov22.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner10-15Dec22.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner10-15Dec22.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner11-15Dec22.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner11-15Dec22.jpg"
+            }
+          />
         </GridItem>
         <GridItem>
-            <Image src={'https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner12-29Nov22.jpg'}/>
+          <Image
+            src={
+              "https://lmsin.net/cdn-cgi/image/w=616,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LSUber-Desktop-Promowidget19-Banner12-29Nov22.jpg"
+            }
+          />
         </GridItem>
-      </Grid>
+      </Box>
     </div>
-  )
+  );
 }
 
-export default BrandWeLove
+export default BrandWeLove;

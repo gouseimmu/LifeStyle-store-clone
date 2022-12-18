@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+  }
+  .productBox {
+
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .head {
+    font-size: 25px;
+    font-weight: 600;
+    width: 150px;
+    margin-left: 60px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+  .filterbox {
+    width: 90%;   
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(3, 80px);
+    column-gap: 10px;
+    align-items: center;
+    margin: auto;
+  }
+  .filterbox > div {
+    /* border: 1px solid rgb(236, 237, 235); */
+    display: flex;
+    padding: 5px 2px;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+  }
+  .filterbox > div:hover {
+    border: 1px solid orange;
+  }
+  .filterbox > div > img {
+    display: block;
+    height: 40px;
+  }
+  /* =============================================================================================== */
+  .selectbox {
+    /* border: 1px solid orange; */
+    width: 90%;
+    /* margin-top: 150px; */
+    /* height:200px; */
+    background-color: rgb(247, 249, 246);
+    display: grid;
+    grid-template-columns: repeat(5, 180px);
+    grid-template-rows: repeat(2, 50px);
+    gap: 10px;
+    margin: auto;
+  }
+  .selectbox > select {
+    width:auto;
+    font-weight: bold;
+    color: grey;
+    border: none;
+    font-size: 14px;
+  }
+  .sort {
+    /* border: 1px solid red; */
+    /* width: 20%; */
+    margin-top: 50px;
+    /* margin-left: 1070px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: 700;
+    color: grey;
+    /* height: 200px; */
+  }
+  .sort > select {
+    /* padding: 5px 20px; */
+    font-weight: 700;
+    font-size: 15px;
+    color: grey;
+  }
+  .productdata {
+    /* border: 1px solid red; */
+    display: grid;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    justify-items: center;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(10, 540px);
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+  .productdata > div {
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+  /* ===========================================================Medium Screen=============================================== */
+  @media only screen and (min-width: 768px) and (max-width: 900px) {
+    .selectbox {
+      display: grid;
+      grid-template-columns: repeat(4, 180px);
+      grid-template-rows: repeat(3, 50px);
+      padding: 20px 0px;
+    }
+  }
+
+
+
+  @media only screen and (min-width: 500px) and (max-width: 768px) {
+    * {
+      box-sizing: border-box;
+      margin: 0px;
+      padding: 0px;
+    }
+    .productBox {
+      width: 100%;
+    }
+    .filterbox {
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: repeat(2, auto);
+      column-gap: 5px;
+      align-items: center;
+      width: 100%;
+    }
+    .head {
+      text-align: center;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+    .selectbox {
+      display: grid;
+      grid-template-columns: repeat(3, 180px);
+      grid-template-rows: repeat(4, 50px);
+      padding: 20px 0px;
+    }
+    .sort {
+      margin: auto;
+    }
+    .productdata {
+      width: 100%;
+      grid-template-columns: repeat(3, 3fr);
+      grid-template-rows: repeat(5, auto);
+    }
+  }
+  /* ==========================================Small Screen============================================================= */
+  @media only screen and (min-width: 320px) and (max-width: 499px) {
+    * {
+      box-sizing: border-box;
+      margin: 0px;
+      padding: 0px;
+    }
+    .filterbox {
+      width: 100%;
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(2, auto);
+      column-gap: 5px;
+      align-items: center;
+    }
+    .head {
+      margin: auto;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .selectbox {
+      display: grid;
+      grid-template-columns: repeat(2, 180px);
+      grid-template-rows: repeat(5, 50px);
+      padding: 60px 60px;
+    }
+    .sort {
+      margin: auto;
+    }
+    .productdata {
+      width: 100%;
+      grid-template-columns: repeat(2, 2fr);
+      grid-template-rows: repeat(21, 400px);
+    }
+  }
+  

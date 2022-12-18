@@ -1,0 +1,42 @@
+
+
+
+.product-list{
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+.pr{
+    font-weight: 600;
+}
+
+.product-list>div{
+    margin-top: 10px;
+    cursor: pointer;
+    
+}
+
+
+.product-list:hover{
+    transform: scale(0.90);
+    border: 1px solid white !important;
+    transition: all 0.8s ease;
+    box-shadow:  gray 0px 10px 40px -12px;
+    
+} 
+ .button-product{
+    margin-bottom: 40px;
+    margin-top: 20px;
+    width: 250px;
+    height: 40px;
+    box-shadow: orange 0px 0px 0px 3px;  
+    background-color: orange; 
+    color: white;
+} 
+.product-list h3{
+    font-size: 18px;
+}
+.product-list img{
+    background: wheat;  
+}
