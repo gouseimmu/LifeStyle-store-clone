@@ -69,7 +69,7 @@
 // export default Signup
 import { Button, Heading, Input, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { signUpRequest } from "../Redux/AuthReducer/action";
 
@@ -82,6 +82,7 @@ const initState = {
 const Signup = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const dispatch = useDispatch();
+  const isAuth = useSelector((s)=>s.AuthReducer.isAuth)
   const navigate = useNavigate()
     const [ data, setData   ] = useState(initState);
     const { name, email, password, mobile } = data
@@ -95,8 +96,10 @@ const handleSubmit = (e)=>{
     e.preventDefault()
   setData(initState)
     dispatch(signUpRequest(data))
-//   navigate("/login")
+   navigate("/Signin")
 }
+
+ 
   return (
     <div className="box">
       <Button onClick={onOpen}>Signup</Button>

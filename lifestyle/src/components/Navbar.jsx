@@ -28,7 +28,7 @@ import {
 } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "./Navbar.css";
-
+import { Link } from "react-router-dom";
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
@@ -137,11 +137,12 @@ function Navbar() {
             <Image
               w={60}
               src="https://vrchennai.com/UploadFile/Storeimage/Lifestyle-big.png"
+              alt="logo"
             ></Image>
           </Flex>
           <Flex w={"100%"} gap={"30px"} pl="30px">
-            <Menu isOpen={isOpenWomen}>
-              <MenuButton
+            <Menu isOpen={isOpenWomen} >
+            <MenuButton
                 transition="all 0.2s"
                 fontWeight={"500"}
                 fontSize={"14px"}
@@ -150,10 +151,10 @@ function Navbar() {
                 onMouseEnter={onOpenWomen}
                 onMouseLeave={onCloseWomen}
               >
-                Women
-              </MenuButton>
+                Women 
+              </MenuButton> 
               <MenuList onMouseEnter={onOpenWomen} onMouseLeave={onCloseWomen}>
-                <MenuItem>Ethnic & Fusion Wear</MenuItem>
+              <Link to="/women"> <MenuItem>Women Wear</MenuItem></Link>
                 <MenuItem>Western Wear</MenuItem>
                 <MenuItem>Lingerie/Sleepwear</MenuItem>
                 <MenuItem>SportsWear</MenuItem>
@@ -173,7 +174,7 @@ function Navbar() {
                 Men
               </MenuButton>
               <MenuList onMouseEnter={onOpenMen} onMouseLeave={onCloseMen}>
-                <MenuItem>Topwear</MenuItem>
+              <Link to="/men"> <MenuItem>Mens Wear</MenuItem></Link>
                 <MenuItem>Bottomwear</MenuItem>
                 <MenuItem>Activepwear</MenuItem>
                 <MenuItem>WinterWear</MenuItem>
@@ -193,7 +194,7 @@ function Navbar() {
                 Kid
               </MenuButton>
               <MenuList onMouseEnter={onOpenKid} onMouseLeave={onCloseKid}>
-                <MenuItem>Boys</MenuItem>
+              <Link to="/kids"> <MenuItem>Boys</MenuItem></Link>
                 <MenuItem>Girls</MenuItem>
                 <MenuItem>Top Brands</MenuItem>
               </MenuList>
@@ -214,7 +215,7 @@ function Navbar() {
                 onMouseEnter={onOpenShoesBag}
                 onMouseLeave={onCloseShoesBag}
               >
-                <MenuItem>Women</MenuItem>
+                <Link to="/shoesbags"><MenuItem>Foot Wear</MenuItem></Link>
                 <MenuItem>Men</MenuItem>
                 <MenuItem>Women Top Brands</MenuItem>
                 <MenuItem>Men Top Brands</MenuItem>
@@ -284,7 +285,8 @@ function Navbar() {
                 <MenuItem>SBI Offers</MenuItem>
               </MenuList>
             </Menu>
-            <Button variant="ghost">Sign Up / Sign In</Button>
+           <Link to="/Signin"> <Button variant="ghost">Sign In</Button></Link>
+           <Link to="/Signup"> <Button variant="ghost">Sign Up</Button></Link>
             <Flex _hover={{ cursor: "Pointer" }}>
               <FaRegHeart />
             </Flex>
@@ -294,7 +296,9 @@ function Navbar() {
           </Flex>
         </Box>
 
-        <Box border={"2px solid red"} className={"logo"}>
+        <Box
+        //  border={"2px solid red"} 
+         className={"logo"}>
           <Image
             w={"100px"}
             h={"60px"}

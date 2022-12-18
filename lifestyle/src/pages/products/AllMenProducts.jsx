@@ -2,18 +2,23 @@ import React from 'react';
 import styled from "styled-components"
 import FilterMenSort from './FilterMenSort';
 import UserMenProducts from './UserMenProducts';
-
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import Section from "./Section"
 
 const AllMenProducts = () => {
   return (
       <div>
-        <FilterMenSort/>
+        <Navbar/>
 
+        <Section/>
+        <FilterMenSort/>
 
         <WrapperUserProduct>
           <UserMenProducts/>
         </WrapperUserProduct>
-        
+
+        <Footer/>
     </div>
   )
 }

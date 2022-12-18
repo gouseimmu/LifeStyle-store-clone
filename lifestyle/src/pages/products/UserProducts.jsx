@@ -42,7 +42,7 @@ const UserProducts = () => {
 
 
          <Link to={`/menpro/${menpro.id}`}>
-          <div key={menpro.id} className="product-list">
+          <div key={menpro.id} className="product-list" >
               <div>
               <img src={menpro.image} alt={menpro.title} style={{ height: "300px", width: "100%" }} />
               </div>

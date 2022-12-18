@@ -85,17 +85,21 @@ const Signin = () => {
        navigate("/admin")
     } else {
       dispatch(loginRequest(data))
+       
     }
+    
+  }
+  if(store.isAuth){
+    navigate("/")
   }
 
+ 
 
-  // if (store.isAuth) {
-  //   navigate("/cart");
-  // }
+  
 
   return (
     <div>
-      <Button onClick={onOpen}>Signin</Button>
+      <Button   onClick={onOpen}>Do you want to Continue ?</Button>
      <Modal onClose={onClose} isOpen={isOpen} isCentered>
       <ModalOverlay />
       <ModalContent>
