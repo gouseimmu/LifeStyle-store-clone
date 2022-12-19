@@ -3,15 +3,31 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import BasketRow from "./BasketRow";
 import "./Kids.css";
 
 const Basket = () => {
+  const [data, setData] = useState(null);
+  const [total, setTotal] = useState(0);
+  useEffect(() => {
+    setData(
+      JSON.parse(localStorage.getItem("basket")).map((item) => {
+        return { ...item, quantity: 1 };
+      })
+    );
+  }, []);
   const obj = JSON.parse(localStorage.getItem("basket")) || [];
-  const [count, setCount] = useState(1);
-  const Remove = (i) => {
-    obj.splice(i, 1);
-    localStorage.setItem("basket", JSON.stringify(obj));
-    window.location.reload();
+  // const Remove = (i) => {
+  //   obj.splice(i, 1);
+  //   localStorage.setItem("basket", JSON.stringify(obj));
+  //   window.location.reload();
+  // };
+  const handleCheckout = () => {
+    let total = 0;
+    for (let i = 0; i < data.length; i++) {
+      total += data[i].cost * data[i].quantity;
+    }
+    localStorage.setItem("basketTotal", total);
   };
   return (
     <div>
@@ -31,7 +47,7 @@ const Basket = () => {
         </Link>
         <Link to="/checkout">
           {" "}
-          <Button bg={"red"} color={"white"}>
+          <Button bg={"red"} color={"white"} onClick={handleCheckout}>
             Checkout
           </Button>
         </Link>
@@ -46,34 +62,11 @@ const Basket = () => {
           gap: "20px",
         }}
       >
-        {obj.map((el, i) => {
-          return (
-            <div key={i} style={{ Width: "50px" }}>
-              <Img src={el.image1} w={"100%"} />
-              <p>${el.cost * count}</p>
-              <p>{el.description}</p>
-              <div
-                style={{
-                  display: "flex",
-                  gap: "15px",
-                  marginTop: "1em",
-                  justifyContent: "start",
-                  marginBottom: "1em",
-                }}
-              >
-                <Button onClick={() => setCount(count - 1)}>-</Button>
-                <Button>{count}</Button>
-                <Button onClick={() => setCount(count + 1)}>+</Button>
-              </div>
-
-              <Button bg={"red.500"} color={"white"} onClick={() => Remove(i)}>
-                Remove Item
-              </Button>
-            </div>
-          );
+        {data?.map((el, i) => {
+          return <BasketRow el={el} i={i} data={data} setData={setData} />;
         })}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

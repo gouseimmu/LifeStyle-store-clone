@@ -33,7 +33,7 @@ import {
   Checkbox,
   ModalFooter,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
@@ -44,6 +44,10 @@ const Checkout = () => {
   const navigate = useNavigate();
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
+  const [total, setTotal] = useState(0)
+  useEffect(()=>{
+    setTotal(localStorage.getItem("basketTotal"))
+  }, [])
   const handleClick = () => {
     alert("Order Placed Successfully");
     onClose();
@@ -144,7 +148,7 @@ const Checkout = () => {
                 <Flex>
                   <Text>Total MRP</Text>
                   <Spacer />
-                  <Text>$199</Text>
+                  <Text>${total}</Text>
                 </Flex>
                 <Flex>
                   <Text>shipping Charge</Text>
