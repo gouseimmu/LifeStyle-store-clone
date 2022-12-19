@@ -35,6 +35,8 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { useNavigate } from "react-router";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 
 
 const Checkout = () => {
@@ -49,6 +51,9 @@ const Checkout = () => {
   };
   return (
     <div>
+       <Box w={'full'} position={'fixed'} zIndex={'10'}>
+        <Navbar />
+        </Box> 
       <Container mb={"370px"} pt={"100px"} maxW="8xl" bg="white.600">
         <Flex>
           <Box p="4">
@@ -139,7 +144,7 @@ const Checkout = () => {
                 <Flex>
                   <Text>Total MRP</Text>
                   <Spacer />
-                  <Text>$999</Text>
+                  <Text>$199</Text>
                 </Flex>
                 <Flex>
                   <Text>shipping Charge</Text>
@@ -269,6 +274,7 @@ const Checkout = () => {
           </Flex>
         </Box>
       </Container>
+      <Footer/>
     </div>
   );
 };

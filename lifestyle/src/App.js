@@ -10,11 +10,9 @@ import MainRoutes from './Routes/MainRoutes';
 function App() {
   return (
     <div className="App">
-      <Box w={'full'} position={'fixed'} zIndex={'10'}>
-        <Navbar />
-        </Box>
+      
      <MainRoutes/>
-     <Footer/>
+     
     
     
    

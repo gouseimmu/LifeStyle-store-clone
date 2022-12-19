@@ -18,7 +18,7 @@ const AllMenProducts = () => {
           <UserMenProducts/>
         </WrapperUserProduct>
 
-
+      <Footer/>
     </div>
   )
 }

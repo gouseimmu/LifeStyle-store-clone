@@ -17,6 +17,8 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProducts, getMenProductList } from "../Redux/AppReducer/action";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
  
  
 const ini = {
@@ -50,6 +52,9 @@ const AddProduct = () => {
 
   return (
     <Box>
+           <Box w={'full'} position={'fixed'} zIndex={'10'}>
+        <Navbar />
+        </Box> 
       <Container maxW={"container"} padding="5" bg={"gray.500"}>
         <Flex gap="10" alignContent={"center"} justify="center">
           <Heading>
@@ -147,6 +152,7 @@ const AddProduct = () => {
           </VStack>
         </Flex>
       </Container>
+      <Footer/>
     </Box>
   );
 };

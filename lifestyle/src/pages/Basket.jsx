@@ -73,6 +73,7 @@ const Basket = () => {
           );
         })}
       </div>
+      <Footer/>
     </div>
   );
 };

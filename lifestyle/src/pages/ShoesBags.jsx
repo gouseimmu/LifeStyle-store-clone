@@ -35,7 +35,9 @@ const ShoesBags = () => {
     }
   return (
     <div>
-      <Navbar/>
+            <Box w={'full'} position={'fixed'} zIndex={'10'}>
+        <Navbar />
+        </Box> 
         <div >
         <Box w={'90%'} m={'auto'}>
       <Carousel
@@ -107,6 +109,7 @@ const ShoesBags = () => {
         </div>
         
     </div>
+    <Footer/>
     </div>
   )
 }

@@ -18,7 +18,7 @@ const AllProducts = () => {
           <UserProducts/>
         </WrapperUserProduct>
 
-      
+      <Footer/>
         
     </div>
   )

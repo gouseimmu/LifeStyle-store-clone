@@ -24,6 +24,9 @@ import { Link } from 'react-router-dom'
 const Women = () => {
   return (
     <div>
+         <Box w={'full'} position={'fixed'} zIndex={'10'}>
+        <Navbar />
+        </Box> 
       <Box   w={"80%"} m={"auto"} pt={'100px'}>
       <Carausel/>
       </Box>
@@ -54,6 +57,7 @@ const Women = () => {
       <Bigbox heading={`Editor's Curated List`} data={wmn_edtr}/>
       </Link>
       <Bigbox heading={`Shop By Department`} data={wmn_spd}/>
+      <Footer/>
     </div>
   )
 }

@@ -20,6 +20,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getMenProductList } from "../Redux/AppReducer/action";
 import ProductItem from "./ProductItem";
 import "./admin.css"
+import Footer from "../components/Footer";
 
 const Admin = () => {
 //   const [Products, setProducts] = useState([]);
@@ -45,6 +46,8 @@ const Admin = () => {
 //       .then(navigate("/admin")).then(window.location.reload())
 //   };
 const product = useSelector((store)=> store.AppReducer.product)
+const isLoad = useSelector((store)=> store.AppReducer.isLoading)
+console.log(isLoad)
 const dispatch = useDispatch()
 useEffect(()=>{
    
@@ -60,14 +63,17 @@ useEffect(()=>{
             <Link to="/admin/addproduct">Add Product</Link>
           </Button>
           <h1 id="man">Manage Products</h1>
-      <div id="admin">
+          {
+            isLoad ? <Text>isLoading...</Text>:  <div id="admin">
         
-        {
-          product?.length && product.map((item)=>{
-            return <ProductItem key={item.id} {...item} data={item}/>
-          })
-        }
-      </div>
+            {
+              product?.length && product.map((item)=>{
+                return <ProductItem key={item.id} {...item} data={item}/>
+              })
+            }
+          </div>
+          }
+    <Footer/>
     </div>
     
   

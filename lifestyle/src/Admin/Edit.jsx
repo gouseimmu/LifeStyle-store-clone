@@ -1,8 +1,9 @@
-import { Button } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { getMenProductList, updateProducts } from "../Redux/AppReducer/action";
 import "./admin.css";
@@ -43,6 +44,10 @@ function Edit() {
   }
 
   return (
+    <div>
+          
+        <Navbar />
+         
     <div id="bedit">
       <form id="edit" onSubmit={Update}>
         <h1>Edit Product</h1>
@@ -80,6 +85,9 @@ function Edit() {
         <br />
         <button type="submit">UPDATE PRODUCT</button>
       </form>
+      
+    </div>
+    <Footer/>
     </div>
   );
 }

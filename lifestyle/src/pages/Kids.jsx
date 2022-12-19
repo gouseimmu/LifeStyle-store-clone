@@ -38,7 +38,9 @@ const Kids = () => {
 
   return (
     <div >
-      <Navbar/>
+           <Box w={'full'} position={'fixed'} zIndex={'10'}>
+        <Navbar />
+        </Box> 
       <Box w={'90%'} m={'auto'}>
       <Carousel
         autoPlay
@@ -109,7 +111,7 @@ const Kids = () => {
             <Button>{page}</Button>
             <Button onClick={()=>setPage(page+1)} bg={'blue'}color={"white"} disabled={page===4}>Next</Button>
         </div>
-        
+        <Footer/>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { Button, Flex, GridItem, Heading, HStack, Img, Input, VStack } from '@chakra-ui/react';
+import { Box, Button, Flex, GridItem, Heading, HStack, Img, Input, VStack } from '@chakra-ui/react';
 import { FaShareAltSquare, FaVine, FaZhihu } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import './Kids.css';
@@ -6,6 +6,8 @@ import React, { useEffect, useState } from "react";
 import "./SingleProduct.css";
 import Slider from "react-slick";
 import axios from "axios";
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 
 const Single = () => {
@@ -119,7 +121,10 @@ const Single = () => {
  
   return (
     <div>
-    <div style={{display:"flex",gap:"30px"}}>
+         <Box w={'full'} position={'fixed'} zIndex={'10'}>
+        <Navbar />
+        </Box> 
+    <div style={{display:"flex",gap:"30px" }}>
 
          <div className='single'>
             <Img src={obj.image1}/>
@@ -127,7 +132,7 @@ const Single = () => {
             <Img src={obj.image3}/>
             <Img src={obj.image4}/>
          </div>
-         <div style={{width:'40%',flexDirection:"column",justifyContent:"center"}}>
+         <div style={{width:'40%',flexDirection:"column",justifyContent:"center"  }}>
          <GridItem textAlign={'center'}>
           <h1 style={{ color: "red" }}>
           ₹{obj.cost}
