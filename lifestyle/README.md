@@ -50,6 +50,9 @@ On the landing page, there are many options like a search bar where users can se
 
 ## Signup Page
 This is the signup page, which the user will get if he clicks on the continue button on the account page and new users can create an account here.
+![si](https://user-images.githubusercontent.com/107460617/214081120-1e960304-4893-4b25-87bc-0173ab349390.PNG)
+
+
 
 ## Login Page
 This is the login page by clicking on the account option on the landing page users will be redirected to the login page if the users are existing customers they can login by the same email and password or by Facebook account or google account. If users are new customers then by clicking on continue they will be redirected to the signup page.
@@ -57,7 +60,12 @@ This is the login page by clicking on the account option on the landing page use
 
 
 ## All Women/ Men Catagory Page
-Basically in this page All women products or All men products will be categorised according to their brand, top sales, offers etc.
+Basically in this page All women products or All men products will be categorised according to their brand, top sales, offers etc. For each brand it will be redirected to another page where user can apply sorting, filtering and also brand names they want.
+![Capture](https://user-images.githubusercontent.com/107460617/214081254-c8b47fff-6867-470f-ad37-911cc1853cee.PNG)
+
+
+![Capture12](https://user-images.githubusercontent.com/107460617/214081279-18d8f55c-364b-45d8-bfad-9e467128bfa6.PNG)
+
 ![Screenshot (380)a](https://user-images.githubusercontent.com/101388724/208612536-63023de9-19e9-48b9-b4ee-6bf9a931acc9.png)</br></br>
 
 
